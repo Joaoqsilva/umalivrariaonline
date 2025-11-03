@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font Imports -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+  <!-- Font Awesome (Ícones) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./style/style.css">
+
+  <title>Livraria Online</title>
+
+</head>
+
+<body>
+
+
+
+  
+
+<header class="header">
+    <nav class="navbar">
+        <div class="hamburguer-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <span class="text-menu">MENU</span>
+        
+      <ul class="nav-links">
+        
+        <li> 
+            
+            <a href="./index.html"> <img src="./icons/casa-white.svg" alt=""> Blog</a>
+        </li>
+        
+        <li>
+            <a href="./livraria.html"> <img src="./icons/book-alt-white.svg" alt=""> Livraria</a>
+        </li>
+        
+        <li>
+            <a href="./Livros-pedidos.html"> <img src="./icons/caixa-de-selecao-white.svg" alt=""> Pedidos Realizados</a>
+        </li>
+
+        
+       
+        <li>
+            <a href="./faca-uma-doacao.html">  <img src="./icons/cuidado-white.svg" alt="">  Faça uma doação</a>
+        </li>
+     
+        <li>
+            <a href="./PedirLivros.html">    <img src="./icons/download-white.svg" alt="">  PEÇA UM LIVRO</a>
+        </li>
+      </ul>
+    </nav>
+
+<h1>Livraria Online</h1>
+
+    <div class="links">
+        <ul>
+
+            
+            <li> 
+            <a href="./index.html">  <img src="./icons/casa.svg" alt=""> <span>Blog</span></a>
+            </li>
+            <li class="ativo">
+            
+            <a  href="./livraria.html"> <img src="./icons/book-alt.svg" alt=""> <span>Livraria</span></a>
+            </li>
+            
+            <li>
+            <a href="./faca-uma-doacao.html">  <img src="./icons/cuidado.svg" alt="">  <span>Doaçao</span></a>
+            </li>
+            <li>
+           
+            <a href="./PedirLivros.html">  <img src="./icons/download.svg" alt="">  <span>Pedir Livro</span></a>
+            </li>
+        </ul>
+    </div>
+</header>
+
+  <div class="pesquisadores">
+    <div class="header-filtro">
+      <button class="filtro-button" id="botao">
+        CATEGORIAS
+        <i id="seta" class="fa-solid fa-angle-right icone"></i>
+      </button>
+      <div class="filtro" id="filtro">
+        <div class="botoes-filtro">
+          <button data-categoria="todos">Mostrar Todos</button>
+          <button data-categoria="psicologia">Psicologia</button>
+          <button data-categoria="filosofia">Filosofia</button>
+          <button data-categoria="financas">Finanças</button>
+          <button data-categoria="literatura">Literatura</button>
+          <button data-categoria="educacao">Educação</button>
+        </div>
+      </div>
+    </div>
+    <div class="buscador">
+      <input type="text" id="buscarLivro" placeholder="Busque um livro...">
+      <button><i class="fas fa-search"></i></button>
+    </div>
+  </div>
+
+
+
+  <main>
+
+    <!--
+        <div class="buscaecategoria">
+              <ul class="ul" >
+    <li class="categorias"><a href="#">Categorias</a>
+      <ul>
+        <li><a href="#">Psicologia</a></li>
+        <li><a href="#">Finanças</a></li></li>
+        <li><a href="#">Biologia</a></li>
+      </ul>
+    </li>
+  </ul>
+    </div>
+-->
+
+
+
+
+
+
+    <div class="livrarias">
+      <!-- A Morte e Um Dia Que Vale a Pena Viver -->
+      <div class="livro categoria-psicologia">
+        <img src="./capa livros/photo_616f0ed9a023e.jpg.webp" alt="">
+        <div class="tituloebaixar">
+          <span class="titulo">CARTAS A UM JOVEM TERAPEUTA - REFLEXÕES PARA PSICOTERAPEUTAS, ASPIRANTES E
+            CURIOSOS</span>
+          <ul>
+            <li> <a href="./livrospdf/Cartas_a_um_Jovem_Terapeuta_Contardo_Cal.pdf">Baixar PDF</a> </li>
+          </ul>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </main>
+
+  <script>
+
+    const inputBusca = document.getElementById('buscarLivro');
+    const livros = document.querySelectorAll('.livro');
+
+    // Função de busca
+    inputBusca.addEventListener('input', function () {
+      const termo = this.value.toLowerCase(); // pega o valor digitado em minúsculas
+
+      livros.forEach(livro => {
+        const titulo = livro.querySelector('.titulo').textContent.toLowerCase(); // título em minúsculas
+        if (titulo.includes(termo)) {
+          livro.style.display = ''; // mostra o livro
+        } else {
+          livro.style.display = 'none'; // esconde o livro
+        }
+      });
+    });
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const hamburguerIcon = document.querySelector('.hamburguer-icon');
+      const navLinks = document.querySelector('.nav-links');
+      const body = document.querySelector('body'); // Seleciona o elemento body
+
+      hamburguerIcon.addEventListener('click', () => {
+        // Alterna a classe 'active' no ícone e nos links
+        hamburguerIcon.classList.toggle('active');
+        navLinks.classList.toggle('active');
+
+        // Alterna a classe 'no-scroll' no body para desabilitar o scroll
+        body.classList.toggle('no-scroll');
+      });
+    });
+
+    // JavaScript para filtro por categoria
+    const botoesFiltro = document.querySelectorAll('.botoes-filtro button');
+
+    botoesFiltro.forEach(botao => {
+      botao.addEventListener('click', () => {
+        const categoriaSelecionada = botao.getAttribute('data-categoria');
+
+        livros.forEach(livro => {
+          if (categoriaSelecionada === 'todos') {
+            livro.style.display = ''; // Mostra todos os livros
+          } else if (livro.classList.contains('categoria-' + categoriaSelecionada)) {
+            livro.style.display = ''; // Mostra o livro se ele pertencer à categoria
+          } else {
+            livro.style.display = 'none'; // Esconde os outros
+          }
+        });
+      });
+    });
+
+    const botao = document.getElementById('botao');
+    const seta = document.getElementById('seta');
+    const filtro = document.getElementById('filtro');
+
+    botao.addEventListener('click', () => {
+      seta.classList.toggle('rotate');
+      filtro.classList.toggle('ativo');
+    });
+
+
+  </script>
+
+</body>
+
+</html>

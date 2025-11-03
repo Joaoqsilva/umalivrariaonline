@@ -1,0 +1,182 @@
+/* 1. Estilos Globais e Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Substitui var(--font-sans) */
+    font-family: 'Montserrat', sans-serif; 
+    /* Substitui var(--background-color) */
+    background-color: #f8f9fa; 
+    /* Substitui var(--text-color) */
+    color: #343a40; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: -15px;
+}
+
+.links {
+    margin-left: 4.6px;
+    display: flex;
+    align-items: center;
+}
+
+.links ul img {
+
+    width: 20px;
+    height: 20px;
+
+}
+
+.content-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* 2. Container Principal (Centralização e Card) */
+.container {
+    /* Substitui var(--card-background) */
+    background: #ffffff;
+    padding: 39px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 666px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+ 
+}
+
+/* 3. Tipografia */
+h1 {
+    /* O font-serif foi mantido, pois não estava definido no :root que você forneceu */
+    font-weight: 700;
+    /* Substitui var(--primary-color) */
+    color: #0b1a24;
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+p {
+    font-size: 1em;
+    margin-bottom: 25px;
+    /* Substitui var(--secondary-color) */
+    color: #6c757d;
+}
+
+/* 4. Input */
+#input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 25px;
+    border: 2px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+}
+
+#input:focus {
+    /* Substitui var(--primary-color) e usa a nova cor RGB para o box-shadow */
+    border-color: #0b1a24;
+    box-shadow: 0 0 0 3px rgba(11, 26, 36, 0.25); /* RGB de #0b1a24 */
+}
+
+/* 5. Área do QR Code */
+#qrcode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px solid #e9ecef; 
+    border-radius: 8px;
+    background-color: #f1f3f5;
+}
+
+#qrcode img, #qrcode canvas {
+    border-radius: 6px; /* Borda leve no QR Code gerado */
+}
+
+/* 6. Botões e Grupo de Botões */
+.button-group {
+    display: flex;
+    flex-direction: column; /* Empilha os botões em telas menores */
+    gap: 15px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
+    border: none;
+    display: block; 
+    width: 100%;
+}
+
+/* Botão Principal: Gerar QR Code */
+#generateBtn {
+    /* Substitui var(--primary-color) */
+    background-color: #0b1a24;
+    color: white;
+}
+
+#generateBtn:hover {
+    /* Ajustado para um tom mais escuro da nova cor primária (#0b1a24) */
+    background-color: #061016; 
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Botão Secundário: Baixar QR Code */
+#downloadBtn {
+    /* Substitui var(--accent-color) */
+    background-color: #28a745;
+    color: white;
+}
+
+#downloadBtn:hover {
+    /* Cor de hover mantida */
+    background-color: #1e7e34;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Botão Terciário/Voltar: Estilo "secondary" */
+.secondary {
+    background-color: transparent;
+    /* Substitui var(--secondary-color) */
+    color: #6c757d;
+    /* Substitui var(--secondary-color) */
+    border: 1px solid #6c757d;
+}
+
+.secondary:hover {
+    /* Substitui var(--secondary-color) */
+    background-color: #6c757d;
+    color: white;
+    /* Substitui var(--secondary-color) */
+    border-color: #6c757d;
+    transform: translateY(-1px);
+}
+
+/* Ajuste para telas maiores (opcional) */
+@media (min-width: 600px) {
+    .button-group {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .btn {
+        width: auto;
+        flex-grow: 1;
+    }
+}

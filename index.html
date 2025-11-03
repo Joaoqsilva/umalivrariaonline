@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-9144032864850758">
+    <link rel="stylesheet" href="./ads.txt"> 
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9144032864850758"
+    crossorigin="anonymous"></script>
+    <!-- Font Imports -->
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <!-- Font Awesome (Ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Arquivos CSS externos foram mantidos, se existirem -->
+    <link rel="stylesheet" href="./style/style.css">
+     <link rel="stylesheet" href="./style/iframes.css">
+    <title>Livraria Online - Vídeos</title>
+
+   
+
+
+
+</head>
+
+<body>
+
+
+
+
+<header class="header">
+    <nav class="navbar">
+        <div class="hamburguer-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <span class="text-menu">MENU</span>
+        
+     <ul class="nav-links">
+    
+            <li> 
+            <a href="./index.html">  <img src="./icons/casa-white.svg" alt=""> <span>Blog</span></a>
+            </li>
+            <li>
+            
+            <a  href="./livraria.html"> <img src="./icons/book-alt-white.svg" alt=""> <span>Livraria</span></a>
+            </li>
+            
+            <li>
+            <a href="./faca-uma-doacao.html">  <img src="./icons/cuidado-white.svg" alt="">  <span>Doaçao</span></a>
+            </li>
+            <li>
+           
+            <a href="./PedirLivros.html">  <img src="./icons/download-white.svg" alt="">  <span>Pedir Livro</span></a>
+            </li>
+        </ul>
+    </nav>
+
+<h1>Livraria Online</h1>
+
+    <div class="links">
+        <ul>
+
+            
+               <li class="ativo">
+            <a href="./index.html">  <img src="./icons/casa-white.svg" alt=""> <span>Blog</span></a>
+            </li>
+            <li>
+            
+            <a  href="./livraria.html"> <img src="./icons/book-alt.svg" alt=""> <span>Livraria</span></a>
+            </li>
+            
+            <li>
+            <a href="./faca-uma-doacao.html">  <img src="./icons/cuidado.svg" alt="">  <span>Doaçao</span></a>
+            </li>
+            <li>
+           
+            <a href="./PedirLivros.html">  <img src="./icons/download.svg" alt="">  <span>Pedir Livro</span></a>
+            </li>
+        </ul>
+    </div>
+</header>
+
+
+
+    <div class="pesquisadores">
+        <div class="header-filtro">
+            <button class="filtro-button" id="botao">
+                Categorias
+                <i id="seta" class="fa-solid fa-angle-right icone"></i>
+            </button>
+            <div class="filtro" id="filtro">
+                <div class="botoes-filtro">
+                    <button data-categoria="todos">Mostrar Todos</button>
+					 <button data-categoria="video-aula">Video Aula</button>
+                    <button data-categoria="lapbe">LAPBE</button>
+                    <button data-categoria="psicologia">Psicologia</button>
+					 <button data-categoria="gestalt">gestalt</button>
+                </div>
+            </div>
+        </div>
+        <div class="buscador">
+            <input type="text" id="buscarLivro" placeholder="Busque um titulo">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+
+        <!-- <h1 class="tituloPesquisador">FAÇA UMA PESQUISA</h1> -->
+    </div>
+
+
+    <main>
+        <!-- Contêiner onde os cards de vídeo serão inseridos -->
+        <div class="card-videos" id="container-videos">
+        </div>
+
+
+
+    </main>
+
+    <script>
+        // =========================================================
+        // DADOS DOS VÍDEOS
+        // =========================================================
+        const listaDeVideos = [
+            {
+                titulo: "Aula - Intervenções Empiricamente Sustentadas para Prevenção ao Suicídio",
+                categorias: ["psicologia", "lapbe", "video-aula", "prevençao-do-suicidio"],
+                url: "https://drive.google.com/file/d/1K8LzaiGLdQi6c1UPhjC2BVwv4Pdc5Wwx/preview",
+                palestranteInstagramUrl: "https://www.instagram.com/loren.beiram/", // Link do Palestrante
+                ligaInstagramUrl: "https://www.instagram.com/lapbe.univali/", 
+                ligaWhatsappUrl: "https://chat.whatsapp.com/HMdDaHnVzoJE68Qd4yIUpy?mode=ems_wa_t" 
+            },
+           {
+                titulo: "Qualidade da ciência em Psicologia ... vidência e adequação de estudos",
+                categorias: ["psicologia", "lapbe", "video-aula"],
+                url: "https://drive.google.com/file/d/1t98QbLen26emnuH06UoHHE3u4GEgt3cE/preview",
+                palestranteInstagramUrl: "https://www.instagram.com/janleonardi/", 
+                ligaInstagramUrl: "https://www.instagram.com/lapbe.univali/", 
+                ligaWhatsappUrl: "https://chat.whatsapp.com/HMdDaHnVzoJE68Qd4yIUpy?mode=ems_wa_t" 
+          },
+          
+            /*  {
+                titulo: "Introdução à Sociologia Clássica",
+                categorias: ["sociologia", "filosofia", "aula", "educacao"],
+                url: "https://www.youtube.com/embed/mock-sociologia-url",
+                palestranteInstagramUrl: "https://www.instagram.com/sociologia_facil/", 
+                ligaInstagramUrl: "https://www.instagram.com/lags_sociologia/",
+                ligaWhatsappUrl: "https://wa.me/5511977777777"
+            },
+            {
+                titulo: "A História da Psicologia: Uma Visão Geral",
+                categorias: ["historia-da-psicologia", "psicologia", "educacao"],
+                url: "https://www.youtube.com/embed/mock-historia-url",
+                palestranteInstagramUrl: "https://www.instagram.com/historia_da_psi/", 
+                ligaInstagramUrl: "https://www.instagram.com/lahp_usp/",
+                ligaWhatsappUrl: "https://wa.me/5511966666666"
+            },
+            {
+                titulo: "Os Conceitos Centrais da Psicanálise Freudiana",
+                categorias: ["psicanálise", "psicologia", "video-aula"],
+                url: "https://www.youtube.com/embed/mock-psicanalise-url",
+                palestranteInstagramUrl: "https://www.instagram.com/psicanalise_hoje/",
+                ligaInstagramUrl: "https://www.instagram.com/lapsi_unicamp/",
+                ligaWhatsappUrl: "https://wa.me/5511955555555"
+            },
+            {
+                titulo: "Gestalt-Terapia: Princípios e Prática Clínica",
+                categorias: ["gestalt", "psicologia", "video-aula"],
+                url: "https://www.youtube.com/embed/mock-gestalt-url",
+                palestranteInstagramUrl: "https://www.instagram.com/gestalt_pratica/",
+                ligaInstagramUrl: "https://www.instagram.com/lagestalt_rs/",
+                ligaWhatsappUrl: "https://wa.me/5511944444444"
+            },
+             {
+                titulo: "Análise Financeira para Iniciantes",
+                categorias: ["financas", "educacao", "economia"],
+                url: "https://www.youtube.com/embed/mock-financas-url",
+                palestranteInstagramUrl: "https://www.instagram.com/financas_simples/",
+                ligaInstagramUrl: "https://www.instagram.com/laf_economia/",
+                ligaWhatsappUrl: "https://wa.me/5511933333333"
+            },
+            {
+                titulo: "A Beleza na Literatura Clássica Brasileira",
+                categorias: ["literatura", "educacao"],
+                url: "https://www.youtube.com/embed/mock-literatura-url",
+                palestranteInstagramUrl: "https://www.instagram.com/literatura_br/",
+                ligaInstagramUrl: "https://www.instagram.com/lalit_ufsc/",
+                ligaWhatsappUrl: "https://wa.me/5511922222222"
+            },*/
+        ];
+
+        // =========================================================
+        // FUNÇÕES DE RENDERIZAÇÃO
+        // =========================================================
+
+        /**
+         * Cria o HTML de um único card de vídeo.
+         * @param {Object} video - Objeto contendo { titulo, categorias, url, palestranteInstagramUrl, ligaInstagramUrl, ligaWhatsappUrl }.
+         */
+        function adicionarVideoCard(video) {
+            const container = document.getElementById('container-videos');
+            if (!container) return;
+
+            const cardDiv = document.createElement('div');
+            cardDiv.classList.add('card-video');
+
+            // Iframe do vídeo
+            const iframe = document.createElement('iframe');
+            iframe.src = video.url;
+            iframe.setAttribute('allow', 'autoplay; encrypted-media');
+            iframe.setAttribute('allowfullscreen', '');
+            
+            // Container de categorias (tags)
+            const categoriasDiv = document.createElement('div');
+            categoriasDiv.classList.add('categorias-video');
+            
+            // Adiciona as tags de categoria
+            video.categorias.forEach(categoria => {
+                const span = document.createElement('span');
+                span.textContent = categoria.toUpperCase().replace(/-/g, ' '); // Formata para exibição
+                categoriasDiv.appendChild(span);
+            });
+            
+            // Título
+            const tituloH1 = document.createElement('h1');
+            tituloH1.classList.add('titulo-video');
+            tituloH1.textContent = video.titulo;
+
+            // Wrapper dos Botões (para controle de layout)
+            const buttonWrapper = document.createElement('div');
+            buttonWrapper.classList.add('card-buttons-wrapper'); 
+
+            // Botão 1: Instagram do Palestrante
+            const instagramPalestranteLink = document.createElement('a');
+            instagramPalestranteLink.classList.add('instagram-btn');
+            instagramPalestranteLink.href = video.palestranteInstagramUrl || "https://www.instagram.com/link_palestrante/"; 
+            instagramPalestranteLink.target = "_blank";
+            instagramPalestranteLink.innerHTML = '<i class="fab fa-instagram"></i> Siga o(a) Palestrante';
+
+            // Botão 2: Instagram da Liga
+            const instagramLigaLink = document.createElement('a');
+            instagramLigaLink.classList.add('instagram-btn');
+            instagramLigaLink.href = video.ligaInstagramUrl || "https://www.instagram.com/link_liga/"; 
+            instagramLigaLink.target = "_blank";
+            instagramLigaLink.innerHTML = '<i class="fab fa-instagram"></i> CONHEÇA O INSTA DA LIGA';
+            
+            // Botão 3: WhatsApp da Liga
+            const Wpplink= document.createElement('a');
+            Wpplink.classList.add('wpp-btn');
+            Wpplink.href = video.ligaWhatsappUrl || "https://wa.me/"; 
+            Wpplink.target = "_blank";
+            Wpplink.innerHTML = '<i class="fab fa-whatsapp"></i> WHATSAPP DA LIGA';
+            
+            // Montagem do Wrapper de Botões
+            buttonWrapper.appendChild(instagramPalestranteLink);
+            buttonWrapper.appendChild(instagramLigaLink);
+            buttonWrapper.appendChild(Wpplink); 
+
+            // Montagem do Card (Ordem: Iframe -> Categorias -> Título -> Wrapper de Botões)
+            cardDiv.appendChild(iframe);
+            cardDiv.appendChild(categoriasDiv);
+            cardDiv.appendChild(tituloH1);
+            cardDiv.appendChild(buttonWrapper);
+
+            container.appendChild(cardDiv);
+        }
+
+        /**
+         * Limpa o container e exibe a lista de vídeos fornecida.
+         * @param {Array} videosParaExibir - Array de objetos de vídeo a serem mostrados.
+         */
+        function exibirVideos(videosParaExibir) {
+            const container = document.getElementById('container-videos');
+            container.innerHTML = ''; // Limpa o conteúdo anterior
+            if (videosParaExibir.length === 0) {
+                 container.innerHTML = '<h2 style="width:100%; text-align:center; color:#555; margin-top:50px;">Nenhum post foi encontrado. Tente outra busca ou categoria.</h2>';
+            } else {
+                 videosParaExibir.forEach(video => {
+                    adicionarVideoCard(video);
+                });
+            }
+        }
+
+        // =========================================================
+        // INICIALIZAÇÃO E LISTENERS
+        // =========================================================
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Exibição inicial de todos os vídeos
+            exibirVideos(listaDeVideos);
+
+            // 2. Funcionalidade de busca (por TÍTULO)
+            const inputBusca = document.getElementById('buscarLivro');
+            inputBusca.addEventListener('input', (evento) => {
+                const termo = evento.target.value.toLowerCase().trim();
+                
+                // Filtra a lista de vídeos pelo título
+                const videosFiltrados = listaDeVideos.filter(video =>
+                    video.titulo.toLowerCase().includes(termo)
+                );
+                
+                exibirVideos(videosFiltrados);
+            });
+
+            // 3. Funcionalidade de filtro por categoria
+            const botoesFiltro = document.querySelectorAll('.botoes-filtro button');
+            botoesFiltro.forEach(botao => {
+                botao.addEventListener('click', (evento) => {
+                    const categoriaSelecionada = evento.target.getAttribute('data-categoria');
+                    let videosFiltrados;
+                    
+                    if (categoriaSelecionada === 'todos') {
+                        videosFiltrados = listaDeVideos;
+                    } else {
+                        // Filtra vídeos cuja lista de categorias INCLUA a categoria selecionada
+                        videosFiltrados = listaDeVideos.filter(video =>
+                            video.categorias.includes(categoriaSelecionada)
+                        );
+                    }
+                    
+                    // Limpa o campo de busca ao filtrar por categoria
+                    inputBusca.value = ''; 
+                    exibirVideos(videosFiltrados);
+                    
+                    // Fecha o menu de filtro após a seleção
+                    document.getElementById('filtro').classList.remove('ativo');
+                    document.getElementById('seta').classList.remove('rotate');
+                });
+            });
+
+            // 4. Funcionalidade do botão "CATEGORIAS" (Toggle)
+            const botaoFiltro = document.getElementById('botao');
+            const seta = document.getElementById('seta');
+            const filtro = document.getElementById('filtro');
+            botaoFiltro.addEventListener('click', () => {
+                seta.classList.toggle('rotate');
+                filtro.classList.toggle('ativo');
+            });
+            
+            // 5. Funcionalidade do menu Hamburguer (Mobile)
+            const hamburguerIcon = document.querySelector('.hamburguer-icon');
+            const navLinks = document.querySelector('.nav-links');
+            const body = document.querySelector('body'); 
+
+            hamburguerIcon.addEventListener('click', () => {
+                hamburguerIcon.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                body.classList.toggle('no-scroll');
+            });
+        });
+    </script>
+</body>
+</html>

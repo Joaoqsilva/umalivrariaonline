@@ -1,0 +1,1309 @@
+/* CSS Integrado e Adaptado */
+
+* {
+
+    padding: 0;
+
+    margin: 0;
+
+    box-sizing: border-box;
+
+    font-family: "Montserrat", sans-serif;
+
+}
+
+
+
+body {
+
+      background-color: #f8f9fa; /* Fundo leve */
+
+}
+
+
+
+.hambuguerTav {
+
+    display: none;
+
+}
+
+
+
+.header {
+
+    background-color: #fff;
+
+    padding: 20px 0;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    margin-bottom: 20px;
+
+    border-radius: 8px;
+
+   
+
+}
+
+
+
+
+
+.header h1 {
+
+    text-align: center;
+
+    margin-top: 50px;
+
+    margin-bottom: 50px;
+
+    color: #212121;
+
+}
+
+
+
+h5 {
+
+    color: #212121;
+
+    text-align: center;
+
+    margin-top: 40px;
+
+    font-size: 32px;
+
+}
+
+
+
+main {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+
+/* Controles de Busca e Filtro (Painel Escuro) */
+
+.pesquisadores {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 20px;
+
+    background-color: #0b1a24;
+
+    margin: 90px auto 0;
+
+    width: 95%;
+
+    max-width: 1650px;
+
+    border-radius: 44px;
+
+    box-sizing: border-box;
+
+    align-items: flex-start;
+
+}
+
+
+
+.header-filtro {
+
+    width: 100%;
+
+    max-width: 300px;
+
+    height: auto;
+
+    border-radius: 12px;
+
+    position: relative;
+
+    align-self: flex-start;
+
+}
+
+
+
+/* Botão principal de Categoria */
+
+.filtro-button {
+
+    border: none;
+
+    background: #fff;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    color: #212121;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 19px 15px;
+
+    width: 100%;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    box-shadow: 4px 10px 14px 9px rgba(0, 0, 0, 0.1);
+
+    border: 2px solid #ececec;
+
+    font-family: "Poppins", sans-serif;
+
+    font-weight: 600;
+
+    font-style: normal;
+
+    box-sizing: border-box;
+
+    /* Adicionado para consistência */
+
+    border: 2px solid #ececec;
+
+}
+
+
+
+.icone {
+
+    transition: transform 0.3s ease;
+
+    position: relative;
+
+    margin-right: 12px;
+
+}
+
+
+
+.filtro-button::before {
+
+    content: "";
+
+    width: 2px;
+
+    height: 40px;
+
+    background-color: #ececec;
+
+    position: absolute;
+
+    right: 59px;
+
+    border-radius: 50px;
+
+}
+
+
+
+.rotate {
+
+    transform: rotate(90deg);
+
+}
+
+
+
+/* Dropdown do Filtro */
+
+.filtro {
+
+    display: block;
+
+    background-color: #fff;
+
+    border-radius: 10px;
+
+    margin-top: 15px;
+
+    overflow: auto;
+
+    max-height: 0;
+
+    opacity: 0;
+
+    transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
+
+    position: absolute;
+
+    width: 100%;
+
+    z-index: 10;
+
+    outline: none;
+
+    box-shadow: 4px 10px 14px 9px rgba(0, 0, 0, 1);
+
+}
+
+
+
+.filtro.ativo {
+
+    padding: 15px;
+
+    max-height: 300px;
+
+    opacity: 1;
+
+    box-shadow: 4px 10px 14px 9px rgba(0, 0, 0, 0.1);
+
+    border: 1px solid #ececec;
+
+    outline: none;
+
+}
+
+
+
+.botoes-filtro {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+
+
+    outline: none;
+
+}
+
+
+
+.botoes-filtro button {
+
+    padding: 10px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    width: 100%;
+
+    height: 45px;
+
+    font-size: 14px;
+
+    transition: background 0.2s;
+
+    box-sizing: border-box;
+
+    max-width: none;
+
+    font-family: "Poppins", sans-serif;
+
+    font-weight: 500;
+
+    font-style: normal;
+
+    background: none;
+
+    /* Resetando background para botões internos */
+
+    text-align: left;
+
+    outline: none;
+
+    border: 0px solid transparent;
+
+}
+
+
+
+.botoes-filtro button:hover {
+
+    background: #2980b9;
+
+    color: #fff;
+
+}
+
+
+
+/* Buscador (Search Bar) */
+
+.buscador {
+
+    display: flex;
+
+    align-items: center;
+
+    background: #fff;
+
+    border-radius: 50px;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    padding: 10px 15px;
+
+    width: 350px;
+
+    max-width: 100%;
+
+    /* Garantir responsividade */
+
+}
+
+
+
+.buscador input {
+
+    flex: 1;
+
+    border: none;
+
+    outline: none;
+
+    font-size: 16px;
+
+    padding: 8px;
+
+    background: transparent;
+
+}
+
+
+
+.buscador button {
+
+    border: none;
+
+    background: #000;
+
+    color: #fff;
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+    transition: 0.3s;
+
+}
+
+
+
+.buscador button:hover {
+
+    background: #333;
+
+}
+
+
+
+/* Estilos do Menu de Navegação (Desktop/Tablet) */
+
+.links {
+
+    display: flex;
+
+    justify-content: space-evenly;
+
+    align-items: center;
+
+    margin-top: 20px;
+
+    width: 100%;
+
+    margin-left: 4.6px;
+
+}
+
+
+
+.links ul img {
+
+
+
+    width: 20px;
+
+    height: 20px;
+
+
+
+}
+
+
+
+
+
+.links ul {
+
+    list-style: none;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-content: center;
+
+    gap: 19px;
+
+}
+
+
+
+.links li {
+
+    display: flex;
+
+    align-items: center;
+
+    background-color: #FBFBFB;
+
+    padding: 10px 20px;
+
+    border-radius: 8px 8px 0px 0px;
+
+}
+
+
+
+.links li a {
+
+    display: inline-block;
+
+    padding: 10px;
+
+    color: #212121;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-weight: 700;
+
+    font-family: "Montserrat", sans-serif;
+
+}
+
+
+
+.btnPedirLivro a {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background-color: #0b1a24;
+
+    color: white;
+
+    text-decoration: none;
+
+    width: 242px;
+
+    height: 60px;
+
+    border-radius: 8px;
+
+    box-shadow: #2980b9 1px 14px 20px -7px;
+
+     font-weight: 600;
+
+    font-family: "Montserrat", sans-serif;
+
+    transition: background 0.3s;
+
+}
+
+
+
+.btnPedirLivro a:hover {
+
+    background: #1B3C53;
+
+}
+
+
+
+/* Container dos Livros */
+
+.livrarias {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 40px;
+
+    margin-top: 50px;
+
+    padding: 20px;
+
+    width: 95%;
+
+    max-width: 1650px;
+
+}
+
+
+
+/* Card do Livro */
+
+.livro {
+
+    width: 300px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    height: 532px;
+
+    /* Altura fixa para alinhar os cards */
+
+    border-radius: 10px;
+
+    background-color: #F5F7F8;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+
+
+.livro:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+}
+
+
+
+.livro img {
+
+    width: 100%;
+
+    height: 320px;
+
+    border-radius: 10px 10px 0 0;
+
+    /* A imagem não terá mais borda embaixo */
+
+    object-fit: cover;
+
+    /* Para garantir que a imagem cubra o espaço */
+
+}
+
+
+
+.tituloebaixar {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    /* Ajusta para empurrar o botão para baixo */
+
+    align-items: center;
+
+    padding: 0 15px 20px;
+
+    /* Padding ajustado */
+
+    flex-grow: 1;
+
+}
+
+
+
+.titulo {
+
+    font-size: 1rem;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-weight: 700;
+
+    color: #212121;
+
+    width: 90%;
+
+
+
+    margin-top: 20px;
+
+    margin-left: 10px;
+
+    height: 40px;
+
+    /* Definir altura para evitar CLS */
+
+
+
+    /* Adicionado overflow para títulos longos */
+
+    overflow: hidden;
+
+    display: -webkit-box;
+
+}
+
+
+
+.tituloebaixar ul {
+
+    list-style: none;
+
+    padding: 0;
+
+    margin: 20px 0 0 0;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+}
+
+
+
+.tituloebaixar li a {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background-color: #0b1a24;
+
+    color: white;
+
+    text-decoration: none;
+
+    width: 242px;
+
+    height: 58px;
+
+    /* Altura um pouco menor */
+
+    border-radius: 8px;
+
+    box-shadow: #2980b9 4px 4px 10px -4px;
+
+    font-weight: 700;
+
+    font-family: "Montserrat", sans-serif;
+
+    transition: background-color 0.3s;
+
+}
+
+
+
+.tituloebaixar a:hover {
+
+    background-color: #2980b9;
+
+}
+
+
+
+.tituloebaixar a::after {
+
+    font-family: "Font Awesome 6 Free";
+
+    content: "\f019";
+
+    margin-left: 10px;
+
+    font-weight: 900;
+
+    /* Font Awesome usa 900 para solid */
+
+}
+
+
+
+/* Menu de navegação Mobile (Hamburger) */
+
+nav.navbar {
+
+    display: none;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    width: 90%;
+
+    position: absolute;
+
+    top: 20px;
+
+    left: 20px;
+
+    padding: 15px 20px;
+
+    z-index: 999;
+
+}
+
+
+
+.navbar .links {
+
+    display: none;
+
+    /* Esconder a barra de links grande no cabeçalho */
+
+}
+
+
+
+.hamburguer-icon {
+
+    display: none;
+
+    /* Será ativado no media query */
+
+    cursor: pointer;
+
+    flex-direction: column;
+
+    justify-content: space-around;
+
+    width: 25px;
+
+    height: 25px;
+
+    z-index: 1000;
+
+}
+
+
+
+.hamburguer-icon .bar {
+
+    width: 100%;
+
+    height: 3px;
+
+    background-color: #2980b9;
+
+    transition: all 0.3s ease-in-out;
+
+        z-index: 1000;
+
+}
+
+
+
+.nav-links {
+
+    list-style: none;
+
+    display: flex;
+
+    /* Display default para desktop/tablet */
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+
+.navs {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 50px;
+
+}
+
+
+
+
+
+
+
+/* Responsividade */
+
+@media screen and (max-width: 1095px) {
+
+    .livro {
+
+        width: 250px;
+
+        /* Reduz a largura para caber mais cards */
+
+    }
+
+
+
+    .livro img {
+
+        height: 280px;
+
+    }
+
+}
+
+
+
+@media screen and (max-width: 1095px) {
+
+    .livro {
+
+        min-width: 280px;
+
+        /* Aumenta a largura em mobile para melhor visualização */
+
+        height: auto;
+
+    }
+
+
+
+    .links li {
+
+        display: none;
+
+    }
+
+   
+
+    .livro img {
+
+        height: 300px;
+
+        object-fit: cover;
+
+    }
+
+
+
+    .links {
+
+        display: none;
+
+        /* Esconde links de desktop */
+
+    }
+
+
+
+    .header {
+
+        padding-top: 70px;
+
+        /* Espaço para o menu mobile */
+
+    }
+
+
+
+    .pesquisadores {
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 30px;
+
+        padding: 30px 15px;
+
+        margin-top: 20px;
+
+        width: 100%;
+
+        border-radius: 0;
+
+        /* Remove borda arredondada em mobile */
+
+    }
+
+
+
+    .buscador,
+
+    .header-filtro {
+
+        max-width: 100%;
+
+        width: 100%;
+
+        margin: 0;
+
+    }
+
+
+
+    .filtro {
+
+        width: 100%;
+
+        left: 0;
+
+        right: 0;
+
+    }
+
+
+
+    /* Hamburger Menu Override */
+
+    .hamburguer-icon {
+
+        display: flex;
+
+       
+
+   
+
+    }
+
+
+
+    .text-menu {
+
+        position: absolute;
+
+        top: 40px;
+
+        left: 8px;
+
+        font-weight: 800;
+
+    }  
+
+
+
+  /* Estiliza o parágrafo que mostra as categorias */
+
+.categorias-info {
+
+    font-size: 0.85em; /* Tamanho da fonte menor */
+
+    color: #6c757d; /* Cor cinza (cor secundária) */
+
+    margin-top: 5px; /* Espaçamento acima */
+
+    padding: 0 10px; /* Padding nas laterais, se necessário */
+
+    text-align: left; /* Alinhamento */
+
+}
+
+
+
+/* Se você quiser um estilo para todos os parágrafos */
+
+p {
+
+    line-height: 1.5;
+
+    /* Outras regras gerais aqui */
+
+}
+
+
+
+    nav.navbar {
+
+        display: block;
+
+       
+
+    }
+
+
+
+    h5 {
+
+    color: #212121;
+
+    text-align: center;
+
+    width: 200px;
+
+    margin-left: 100px;
+
+    margin-top: 50px;
+
+    font-size: 18px;
+
+}
+
+
+
+    .nav-links {
+
+        position: fixed;
+
+        top: 0;
+
+        right: -100%;
+
+        width: 100%;
+
+        height: 100vh;
+
+        background-color: #0b1a24;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        align-items: center;
+
+        padding-top: 60px;
+
+        transition: right 0.5s ease-in-out;
+
+    }
+
+
+
+    .nav-links.active {
+
+        display: flex;
+
+        right: 0;
+
+        overflow: hidden;
+
+        z-index: 1;
+
+    }
+
+
+
+    .nav-links li {
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        /* Usa 'block' para ocupar 100% da largura */
+
+        width: 80%;
+
+        text-align: center;
+
+        background: linear-gradient(90deg, #1b3c5357, #1b3c5357);
+
+        color: #fff;
+
+        padding: 12px 28px;
+
+        border-radius: 10px;
+
+        font-weight: 500;
+
+        text-decoration: none;
+
+        transition: background 0.3s ease;
+
+   
+
+
+
+    }
+
+
+
+    .nav-links li a {
+
+        color: white;
+
+        font-weight: 600;
+
+        text-decoration: none;
+
+        font-family: "Montserrat", sans-serif;
+
+        padding: 10px 10px;
+
+     
+
+    }
+
+
+
+    .nav-links img {
+
+    width: 20px;
+
+    height: 20px;
+
+    color: white;
+
+        position: relative;
+
+        right: 106px;
+
+        top: 40px;
+
+        stroke: #fff;
+
+
+
+}
+
+
+
+    .btnPedirLivro {
+
+        margin-top: 40px;
+
+        display: block;
+
+        width: 80%;
+
+        text-align: center;
+
+    }
+
+
+
+    .btnPedirLivro a {
+
+        width: 100%;
+
+        height: 55px;
+
+        font-size: 16px;
+
+    }
+
+
+
+
+
+    .hamburguer-icon.active .bar:nth-child(1) {
+
+        transform: rotate(-45deg) translate(-5px, 6px);
+
+    }
+
+
+
+    .hamburguer-icon.active .bar:nth-child(2) {
+
+        opacity: 0;
+
+    }
+
+
+
+    .hamburguer-icon.active .bar:nth-child(3) {
+
+        transform: rotate(45deg) translate(-5px, -6px);
+
+    }
+
+
+
+    .no-scroll {
+
+        overflow: hidden;
+
+    }
+
+
+
+    .links ul {
+
+    list-style: none;
+
+    display: flex;
+
+     flex-wrap: nowrap;
+
+    gap: 20px;
+
+}
+
+
+
+
+
+.links {
+
+    display: flex;
+
+    justify-content: space-evenly;
+
+    align-items: center;
+
+    margin-top: 20px;
+
+    width: 100%;
+
+    margin-left: 4.6px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+}

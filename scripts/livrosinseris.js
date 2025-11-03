@@ -1,0 +1,610 @@
+const listaDeLivros = [
+    {
+        titulo: "A Morte é um Dia Que Vale a Pena Viver",
+        categorias: ["psicologia"],
+        capaUrl: "./capa livros/livro-a-morte-e-um-dia-que-vale-a-pena-viver-2ed.webp",
+        pdfUrl: "./livrospdf/A Morte e Um Dia Que Vale a Pena Viver.pdf"
+    },
+    {
+        titulo: "A Hora da Estrela",
+        categorias: ["literatura"],
+        capaUrl: "./capa livros/a hora da estrela.webp",
+        pdfUrl: "./livrospdf/Clarissa Pinkola Estés - Mulheres que Correm com os Lobos.pdf",
+
+    },
+
+      {
+        titulo: "40 Sinais para você Identificar e Excluir da sua vida PESSOAS MANIPULADORAS",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/71wba4lIMEL._SL1500_.jpg",
+        pdfUrl: "livrospdf2/40 Sinais para você Identificar e Excluir da sua vida PESSOAS MANIPULADORAS Narcisistas, psicopata e pessoas tóxicas em geral… (Di Saval) (Z-Library).pdf",
+    },
+    
+  {
+    titulo: " Teorias da Personalidade James Fadiman, Robert Frager",
+    categorias: ["psicologia"],
+    capaUrl: "https://static.estantevirtual.com.br/book/00/FYS-5914-000/FYS-5914-000_detail1.jpg?ts=1734703608127&ims=fit-in/600x800/filters:fill(fff):quality(100)",
+    pdfUrl: "livrospdf2/DIGITALIZADO_Teorias_da_Personalidade_James_Fadiman,_Robert_Frager.pdf",
+  },
+  {
+    titulo: "Casos clínicos em saúde mental diagnóstico, indicação e tratamento baseados em evid",
+    categorias: ["psicologia"],
+    capaUrl: "https://m.media-amazon.com/images/I/71VgA5F1TcL._SL1500_.jpg",
+    pdfUrl: "livrospdf2/Casos clínicos em saúde mental diagnóstico, indicação e tratamento baseados em evidências.pdf",
+  },
+  {
+    titulo: "Protocolo Unificado para Tratamento Transdiagnóstico Guia do Paciente",
+    categorias: ["psicologia"],
+    capaUrl: "https://livrarialoyola.fbitsstatic.net/img/p/protocolo-unificado-para-tratamento-transdiagnostico-de-transtornos-emocionais-manual-do-paciente-405995/600794.jpg?w=800&h=800&v=202503111811&qs=ignore",
+    pdfUrl: "livrospdf2/Protocolo_Unificado_para_Tratamento_Transdiagnóstico_Guia_do_Paciente.pdf",
+  },
+  {
+    titulo: "Terapia Cognitivo-comportamental Breve Para Prevenção do Suicídio",
+    categorias: ["psicologia"],
+    capaUrl: "https://m.media-amazon.com/images/I/716Ph0JVbmL._SL1500_.jpg",
+    pdfUrl: "livrospdf2/Terapia Cognitivo-comportamental Breve Para Prevenção do Suicídio.pdf",
+  },
+  {
+    titulo: "Teorias da Personalidade 8ª Edição",
+    categorias: ["psicologia"],
+    capaUrl: "https://m.media-amazon.com/images/I/91SmdnzIKkL._SL1500_.jpg",
+    pdfUrl: "livrospdf2/Teorias da Personalidade _ 8ª Edição.pdf",
+  },
+  {
+    titulo: "O Corpo Fala A Linguagem Silenciosa da Comunicao Nao Verbal by Pierre Weil R....",
+    categorias: ["psicologia"],
+    capaUrl: "https://m.media-amazon.com/images/I/81bs2U1-CrL._SL1500_.jpg",
+    pdfUrl: "livrospdf2/O-Corpo-Fala-A-Linguagem-Silenciosa-da-Comunicacao-Nao-Verbal-by-Pierre-Weil-Roland-Tompakow-z-lib.org_.pdf",
+  },
+  {
+    titulo: "Aprendizagem infantil uma abordagem da neurociência, economia e",
+    categorias: ["psicologia"],
+    capaUrl: "https://m.media-amazon.com/images/I/31l1tlkRDeL._SY445_SX342_ControlCacheEqualizer_.jpg",
+    pdfUrl: "livrospdf2/Aprendizagem_infantil_uma_abordagem_da_neurociência,_economia_e.pdf",
+  },
+  {
+    titulo: "O que é Existencialismo joao da penha",
+    categorias: ["psicologia"],
+    capaUrl: "https://m.media-amazon.com/images/I/914irOgEtSL._SL1500_.jpg",
+    pdfUrl: "livrospdf2/O_que_e_Existencialismo_joao_da_penha.pdf",
+  },
+  {
+    titulo: "LIPOVETSKY, Gilles. Os Tempos Hipermodernos",
+    categorias: ["psicologia"],
+    capaUrl: "https://m.media-amazon.com/images/I/81r5HJtqmtL._SL1500_.jpg",
+    pdfUrl: "livrospdf2/LIPOVETSKY, Gilles. Os Tempos Hipermodernos.pdf",
+  },
+  {
+    titulo: "Protocolo Unificado para Tratamento Transdiagnóstico Guia do Terapeuta",
+    categorias: ["psicologia"],
+    capaUrl: "https://dl4326nmjp5rc.cloudfront.net/Custom/Content/Products/10/52/1052006_protocolo-unificado-para-tratamento-transdiagnostico-de-transtornos-emocionais-terapeuta_z1_638773797160820049.webp",
+    pdfUrl: "livrospdf2/Protocolo_Unificado_para_Tratamento_Transdiagnóstico_Guia_do_Terapeuta.pdf",
+  },
+  {
+    titulo: "Terapia cognitiva para os transtornos de ansiedade Clark & Beck",
+    categorias: ["psicologia"],
+    capaUrl: "https://m.media-amazon.com/images/I/71h0nVI5vmL._SL1500_.jpg",
+    pdfUrl: "livrospdf2/Terapia cognitiva para os transtornos de ansiedade - Clark & Beck.pdf",
+  },
+  {
+    titulo: "Os demonios Fiodor Dostoievski",
+    categorias: ["psicologia"],
+    capaUrl: "https://m.media-amazon.com/images/I/712h-3gTNaL._SL1500_.jpg",
+    pdfUrl: "livrospdf2/Os_demonios_Fiodor_Dostoievski.pdf",
+  },
+  {
+    titulo: "BOTEGA. Crise suicida",
+    categorias: ["psicologia"],
+    capaUrl: "https://m.media-amazon.com/images/I/71QbjZfm2RL._SL1359_.jpg",
+    pdfUrl: "livrospdf2/BOTEGA. Crise suicida.pdf",
+  },
+  {
+    titulo: "A parte que falta",
+    categorias: ["psicologia"],
+    capaUrl: "https://m.media-amazon.com/images/I/71wXLjDyH8L._SL1500_.jpg",
+    pdfUrl: "livrospdf2/A-parte-que-falta.pdf",
+  },
+
+
+  
+
+    {
+        titulo: "Terapia de Aceitação e Compromisso: O Processo e a Prática da Mudança Consciente",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/71sD8bFlCKL._SL1500_.jpg",
+        pdfUrl: "livrospdf2/Terapia_de_aceitação_e_compromisso_o_processo_e_a_prática_da_mudança.pdf",
+    },
+      {
+        titulo: "A vida é curta demais pra viver o mínimo das coisas.pdf",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/71E-++cvOAL._SL1500_.jpg",
+        pdfUrl: "livrospdf2/A vida é curta demais pra viver o mínimo das coisas.pdf",
+     },
+    {
+        titulo: "A Prateleira do Amor",
+        categorias: ["psicologia"],
+        capaUrl: "./capa livros/A Prateleira do Amor - Sobre Mulheres, Homens e Relações (.webp",
+        pdfUrl: "./livrospdf/A Prateleira do Amor - Sobre Mulheres, Homens e Relações (ZANELLO, 2022).pdf"
+    },
+    {
+        titulo: "A Interpretação dos Sonhos",
+        categorias: ["psicologia", "psicanálise"],
+        capaUrl: "./capa livros/Screenshot_8.png",
+        pdfUrl: "./livrospdf/A interpretação dos sonhos - Sigmund Freud.pdf"
+    },
+    {
+        titulo: "Vencendo a Ansiedade e a Preocupação com a TCC",
+        categorias: ["psicologia"],
+        capaUrl: "./capa livros/71TLZfo0tdL.webp",
+        pdfUrl: "livrospdf/Vencendo_a_Ansiedade_e_a_Preocupação_com_a_Terapia_Cognitiva_Comportamental.pdf"
+    },
+    {
+        titulo: "Vencendo a Depressão com a TCC",
+        categorias: ["psicologia"],
+        capaUrl: "./capa livros/61Czz-XZDnL._SL1500_.jpg",
+        pdfUrl: "livrospdf/VENCENDO A DEPRESSÃO COM A TCC.pdf"
+    },
+    {
+        titulo: "Um Crime na Solidão",
+        categorias: ["literatura"],
+        capaUrl: "./capa livros/D_Q_NP_834765-MLU50632539010_072022-F.webp",
+        pdfUrl: "livrospdf/um crime na solidão, Andrew Solomon.pdf"
+    },
+    {
+        titulo: "Tudo Sobre o Amor",
+        categorias: ["psicologia"],
+        capaUrl: "./capa livros/210217-tudosobreoamorB.jpg",
+        pdfUrl: "./livrospdf/tudo sobre o amor Bell Hooks.pdf"
+    },
+    ,
+    {
+        titulo: "Saber Envelhecer Seguido de a Amizade - Cicero",
+        categorias: ["psicologia","filosofia"],
+        capaUrl: "https://m.media-amazon.com/images/I/71QDNWAYz6L._SL1500_.jpg",
+        pdfUrl: "./livrospdf/Saber Envelhecer     Seguido de a Amizade - Cicero.pdf"
+    },
+    {
+        titulo: "Saber Envelhecer Cicero 1",
+        categorias: ["psicologia","filosofia"],
+        capaUrl: "capa livros/Screenshot_12.png",
+        pdfUrl: "./livrospdf/Saber_Envelhecer_Cicero_1.pdf"
+    },
+    
+    {
+        titulo: "Treinamento de Habilidades em DBT",
+        categorias: ["psicologia"],
+        capaUrl: "./capa livros/812L9N-YxLL._SL1500_.jpg",
+        pdfUrl: "./livrospdf/TREINAMENTO DE HABILIDADES EM DBT (MANUAL DO TERAPEUTA) - Marsha M. Linehan.pdf"
+    },
+    {
+        titulo: "Terapia Cognitivo-Comportamental em Grupos",
+        categorias: ["psicologia"],
+        capaUrl: "./capa livros/81v-ds4ZZML._SL1500_.jpg",
+        pdfUrl: "./livrospdf/Terapia Cognitivo-Comportamental em Grupos.pdf"
+    },
+    {
+        titulo: "Teoria e Técnica de Psicoterapias",
+        categorias: ["psicologia"],
+        capaUrl: "./capa livros/41vp+xPmRcL._SL1243_.jpg",
+        pdfUrl: "./livrospdf/Teoria-e-tecnica-de-psicoterapias-hector-juan-fiorini-pr.pdf"
+    },
+    {
+        titulo: "Técnicas de Terapia Cognitiva",
+        categorias: ["psicologia"],
+        capaUrl: "./capa livros/51FsR1yiTuL.webp",
+        pdfUrl: "./livrospdf/Tecnicas_de_terapia_cognitiva_Robert.pdf"
+    },
+    {
+        titulo: "Transtorno do Espectro Autista (TEA)",
+        categorias: ["psicologia"],
+        capaUrl: "./capa livros/mini_magick20200323-2271-wwjqg6.png",
+        pdfUrl: "livrospdf/TEA_Transtornos_do_Espectro_AUTISTA_Avaliação_Diagnóstico_e_Estratégias.pdf"
+    },
+    {
+        titulo: "História da Psicologia Moderna",
+        categorias: ["psicologia", "história da psicologia"],
+        capaUrl: "./capa livros/Schultz - História da Psicologia Moderna [11ª Edição, 2019].jpg",
+        pdfUrl: "./livrospdf/Schultz - História da Psicologia Moderna [11ª Edição, 2019].pdf"
+    },
+    {
+        titulo: "Revista Diálogos – Nº 05",
+        categorias: ["psicologia"],
+        capaUrl: "./capa livros/capa_dialogos_5_nova-126x187.png",
+        pdfUrl: "./livrospdf/RevistaDilogoN.5.pdf"
+    },
+    {
+        titulo: "Questionamento Socrático para Terapeutas",
+        categorias: ["psicologia"],
+        capaUrl: "./capa livros/71zGFQ26hJL._SL1500_.jpg",
+        pdfUrl: "./livrospdf/Questionamento_Socrático_para_Terapeutas_Aprenda_a_Pensar_e_a_Intervir.pdf"
+    },
+    {
+        titulo: "Quem Tem Medo do Gênero?",
+        categorias: ["filosofia", "sociologia"],
+        capaUrl: "./capa livros/338621-1.webp",
+        pdfUrl: "./livrospdf/Quem-tem-medo-do-Genero-Judith-Butler.pdf"
+    },
+    {
+        titulo: "A Consolação da Filosofia",
+        categorias: ["filosofia"],
+        capaUrl: "https://m.media-amazon.com/images/I/91pyLIN+9VS._SL1500_.jpg",
+        pdfUrl: "./livrospdf/A-Consolacao-da-Filosofia-Boecio.pdf"
+    },
+    {
+        titulo: "Avanços em Psicopatologia: Avaliação e Diagnóstico Baseados na CID",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/61Hb7Gaq2DL._SL1477_.jpg",
+        pdfUrl: "./livrospdf/Avanços_em_Psicopatologia_Avaliação_e_Diagnóstico_Baseados_na_CID.pdf"
+    },
+    {
+        titulo: "Análise do Comportamento Aplicada ao Transtorno do Espectro Autista",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/817HZ9lQnFL._SL1500_.jpg",
+        pdfUrl: "./livrospdf/Analise do comportamento TEA.pdf"
+    },
+    {
+        titulo: "Cartas a um Jovem Terapeuta",
+        categorias: ["psicologia"],
+        capaUrl: "./capa livros/photo_616f0ed9a023e.jpg.webp",
+        pdfUrl: "./livrospdf/Cartas_a_um_Jovem_Terapeuta_Contardo_Cal.pdf"
+    },
+    {
+        titulo: "Mulheres que Correm com os Lobos",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/7121bMhcNKL._SL1500_.jpg",
+        pdfUrl: "livrospdf/Clarissa Pinkola Estés - Mulheres que Correm com os Lobos.pdf"
+    },
+    {
+        titulo: "Convite à Filosofia",
+        categorias: ["filosofia"],
+        capaUrl: "https://livrista.com.br/thumb/l600/capas/2015/17551/89033.jpg",
+        pdfUrl: "./livrospdf/Convite a Filosofia - Marilena Chaui.pdf"
+    },
+    {
+        titulo: "O Menino é o Mestre: Vida de Maria Montessori",
+        categorias: ["educacao"],
+        capaUrl: "https://http2.mlstatic.com/D_Q_NP_2X_873271-CBT75768878436_042024-E-livro-a-crianca-e-a-professora-a-vida-de-maria-montesori-t.webp",
+        pdfUrl: "livrospdf/De Stefano Cristina - El Niño Es El Maestro - Vida De María Montessori.pdf",
+    },
+    {
+        titulo: "Diagnóstico Descomplicado",
+        categorias: ["psicologia"],
+        capaUrl: "https://dl4326nmjp5rc.cloudfront.net/Custom/Content/Products/10/51/1051998_diagnostico-descomplicado-3ed9786558823025_z1_638768819587595315.webp",
+        pdfUrl: "./livrospdf/diagnóstico descomplicado.pdf"
+    },
+    {
+        titulo: "Discurso de Ódio: Uma Política do Performativo",
+        categorias: ["filosofia"],
+        capaUrl: "./capa livros/Screenshot_9.png",
+        pdfUrl: "./livrospdf/Discurso de ódio - uma política do performativo (Judith Butler) (Z-Library).pdf"
+    },
+    {
+        titulo: "Ensaios sobre Filosofia Antiga e Estoicismo",
+        categorias: ["filosofia"],
+        capaUrl: "https://m.media-amazon.com/images/I/91Cv4sds2vL._SL1000_.jpg",
+        pdfUrl: "./livrospdf/Ensaios sobre Filosofia Antiga e Estoicismo 𖤓.pdf"
+    },
+    {
+        titulo: "Espectro Autista Feminino",
+        categorias: ["psicologia"],
+        capaUrl: "https://livrariascuritiba.vteximg.com.br/arquivos/ids/2184432-1000-1000/LV519805.jpg?v=638619815415200000",
+        pdfUrl: "./livrospdf/Espectro autista feminino Lygia Pereira Thiago Castro.pdf"
+    },
+    {
+        titulo: "Exame Clínico Psicológico (Anamnese)",
+        categorias: ["psicologia"],
+        capaUrl: "https://www.sinopsyseditora.com.br/upload/site_produto/anamnese-exame-clinico-psicologico-kit-completo~227_gg.webp",
+        pdfUrl: "./livrospdf/Exame_Clinico_Psicologico_Anamnese_Hipolito_Carretoni.pdf"
+    },
+    {
+        titulo: "Felizes por Enquanto",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/81wt4uNTK5L._SL1500_.jpg",
+        pdfUrl: "./livrospdf/Felizes-por-enquanto-escritos-sobre-outros-mundos-possíveis-_Geni-Núñez_-_Z-Library_.pdf"
+    },
+    {
+        titulo: "Instrumentos de Avaliação em Saúde Mental",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/81XNhBRtj9L._SL1500_.jpg",
+        pdfUrl: "./livrospdf/Instrumentos de Avaliação em Saúde Mental - 2a Edição.pdf"
+    },
+    {
+        titulo: "Inteligência Emocional",
+        categorias: ["psicologia"],
+        capaUrl: "https://http2.mlstatic.com/D_NQ_NP_990089-MLU50424745039_062022-O.webp",
+        pdfUrl: "./livrospdf/Inteligencia-emocional-Daniel-Goleman.pdf"
+    },
+    {
+        titulo: "A Força da Não Violência",
+        categorias: ["filosofia"],
+        capaUrl: "https://m.media-amazon.com/images/I/81CnNKTRs4L._SL1500_.jpg",
+        pdfUrl: "./livrospdf/Judith-Butler-A-forca-da-nao-violencia_-Um-vinculo-etico-politico-Boitempo-Editorial-2021.pdf"
+    },
+    {
+        titulo: "A Relação Terapêutica nas Terapias Cognitivo-Comportamentais",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/610eZ6o967L._SL1500_.jpg",
+        pdfUrl: "./livrospdf/KRISTENSEN,_Aline_Duarte_A_relação_terapêutica_nas_terapias_cognitivo.pdf"
+    },
+    {
+        titulo: "Fundamentos de Neuropsicologia",
+        categorias: ["psicologia", "neuropsicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/81RBfC1srUL._SL1500_.jpg",
+        pdfUrl: "./livrospdf/LURIA-A-R-Fundamentos-de-Neuropsicologia.pdf"
+    },
+    {
+        titulo: "Manual sobre o Transtorno do Espectro Autista (TEA)",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/61sgZDwb-ML._SL1086_.jpg",
+        pdfUrl: "./livrospdf/Manual TEA.pdf"
+    },
+    {
+        titulo: "Manual Diagnóstico e Estatístico de Transtornos Mentais (DSM-5-TR)",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/71dsFOY7HWL._SL1500_.jpg",
+        pdfUrl: "./livrospdf/Manual_Diagnóstico_e_Estatístico_de_Transtornos_Mentais_DSM_5_TR.pdf"
+    },
+    {
+        titulo: "Manual Prático da CIF",
+        categorias: ["psicologia"],
+        capaUrl: "https://image.slidesharecdn.com/manualprticodacif-171029110924/75/Manual-pratico-da-CIF-1-2048.jpg",
+        pdfUrl: "./livrospdf/Manual-Prático-da-CIF.pdf"
+    },
+    {
+        titulo: "Princípios Básicos de Análise do Comportamento",
+        categorias: ["psicologia"],
+        capaUrl: "https://dl4326nmjp5rc.cloudfront.net/Custom/Content/Products/10/04/1004118_eb-principios-basicos-de-anal-do-comportamento9788582715161_l1_636736605857698837.webp",
+        pdfUrl: "./livrospdf/MOREIRA_MEDEIROS (2019) - Princípios Básicos De Análise Do Comportamento 2ª edição.pdf"
+    },
+    {
+        titulo: "Morte em Pleno Verão",
+        categorias: ["literatura"],
+        capaUrl: "./capa livros/Screenshot_2.png",
+        pdfUrl: "./livrospdf/Morte em pleno verão (Yukio Mishima) (Z-Library)-1-54.pdf"
+    },
+    {
+        titulo: "Neuropsicologia Hoje",
+        categorias: ["psicologia", "neuropsicologia"],
+        capaUrl: "./capa livros/Screenshot_3.png",
+        pdfUrl: "livrospdf/Neuropsicologia  hoje.pdf"
+    },
+    {
+        titulo: "Neuropsicologia Clínica",
+        categorias: ["psicologia", "neuropsicologia"],
+        capaUrl: "https://www.grupogen.com.br/media/catalog/product/9/7/9788527740203.2.png?optimize=low&bg-color=255,255,255&fit=bounds&height=&width=&canvas=:",
+        pdfUrl: "./livrospdf/Neuropsicologia Clínica - Miotto - 2017.pdf"
+    },
+    {
+        titulo: "Neuropsicologia: Teoria e Prática (2ª Edição)",
+        categorias: ["psicologia", "neuropsicologia"],
+        capaUrl: "https://static.estantevirtual.com.br/book/00/07Y-8580-000/07Y-8580-000_detail1.jpg?ts=1712766451011&ims=fit-in/600x800/filters:fill(fff):quality(100)",
+        pdfUrl: "./livrospdf/Neuropsicologia - Teoria e Pratica.pdf"
+    },
+    {
+        titulo: "Neuropsicologia",
+        categorias: ["psicologia", "neuropsicologia"],
+        capaUrl: "./capa livros/Screenshot_4.png",
+        pdfUrl: "./livrospdf/Neuropsicologia.pdf"
+    },
+    {
+        titulo: "Neuropsicologia: Aplicações Clínicas",
+        categorias: ["psicologia", "neuropsicologia"],
+        capaUrl: "https://carrefourbr.vtexassets.com/arquivos/ids/430311/MP11637713_1.jpg?v=637274877610000000",
+        pdfUrl: "./livrospdf/Neuropsicologia_ Aplicacoes Cli - Leandro F. Malloy-Diniz.pdf"
+    },
+    {
+        titulo: "Neuropsicologia do Desenvolvimento: Infância e Adolescência",
+        categorias: ["psicologia", "neuropsicologia"],
+        capaUrl: "./capa livros/Screenshot_6.png",
+        pdfUrl: "./livrospdf/Neuropsicologia_do_Desenvolvim_Infância.pdf"
+    },
+    {
+        titulo: "O Anti-Édipo",
+        categorias: ["filosofia"],
+        capaUrl: "./capa livros/Screenshot_1.png",
+        pdfUrl: "./livrospdf/O Anti Edipo.pdf"
+    },
+    {
+        titulo: "O Processo de Somatização",
+        categorias: ["psicologia"],
+        capaUrl: "capa livros/Captura de tela_23-9-2025_183520_prnt.sc.jpeg",
+        pdfUrl: "./livrospdf/o_processo_de_somatizacao.pdf"
+    },
+    {
+        titulo: "O Demônio do Meio-Dia",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/91x9EF1AifL._SL1500_.jpg",
+        pdfUrl: "./livrospdf/O-Demonio-Do-Meio-Dia-Uma-Anatomia-Da-Depressao.pdf"
+    },
+    {
+        titulo: "O Livro Que Você Gostaria Que Todas as Pessoas Que Você Ama Lessem",
+        categorias: ["literatura"],
+        capaUrl: "https://m.media-amazon.com/images/I/71br3Py-3SL._SL1500_.jpg",
+        pdfUrl: "./livrospdf/O-livro-que-você-gostaria-que-todas-as-pessoas.pdf"
+    },
+    {
+        titulo: "Pai Rico, Pai Pobre",
+        categorias: ["financas"],
+        capaUrl: "https://m.media-amazon.com/images/I/71V4lNR2gKL._SL1500_.jpg",
+        pdfUrl: "./livrospdf/Pai Rico, Pai Pobre - Robert T. Kiyosaki.pdf"
+    },
+    {
+        titulo: "Prática Psiquiátrica no Hospital Geral",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/81WmRPacjjL._SL1500_.jpg",
+        pdfUrl: "./livrospdf/Pratica Psiquiatrica no Hospita - Neury Jose Botega.pdf"
+    },
+    {
+        titulo: "Manifesto Contrassexual",
+        categorias: ["filosofia"],
+        capaUrl: "https://m.media-amazon.com/images/I/81CnNKTRs4L._SL1500_.jpg",
+        pdfUrl: "./livrospdf/PRECIADO, Paul B. - Manifesto contrassexual.pdf"
+    },
+    {
+        titulo: "Psicologia Escolar e Compromisso Social",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/71rSQ2Ni+XL._SL1500_.jpg",
+        pdfUrl: "./livrospdf/PSICOLOGIA ESCOLAR E COMPROMISSO SOCIAL.pdf"
+    },
+    {
+        titulo: "A voz na sua cabeça",
+        categorias: ["psicologia"],
+        capaUrl: "https://sextante.com.br/cdn/shop/files/Capa_1_9786555641844.jpg?v=1739211320&width=1680",  
+        pdfUrl: "./livrospdf/A voz na sua cabeça - Ethan Kross_241126_005932.pdf"
+    },
+    {
+        titulo: "Terapia cognitiva para os transtornos de ansiedade",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/71h0nVI5vmL._SL1500_.jpg",  
+        pdfUrl: "./livrospdf/Terapia cognitiva para os transtornos de ansiedade - Clark & Beck.pdf"
+    },
+    {
+        titulo: "Amor, sexualidade, feminilidade",
+        categorias: ["psicanálise"],
+        capaUrl: "https://m.media-amazon.com/images/I/51UiLYUOIXL._SL1360_.jpg",  
+        pdfUrl: "./livrospdf/Amor, sexualidade, feminilidade - Sigmund_Freud.pdf"
+    },
+    {
+        titulo: "Apego e perda: A natureza do vínculo Vol1",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/51j1Xk2Ew5L._SL1500_.jpg",
+        pdfUrl: "./livrospdf/Apego e perda A natureza do vínculo Vol1 - Jonh_25_250924_113049.pdf"
+    },
+    {
+        titulo: "Aprendizagem infantil: uma abordagem da neurociência, economia e ...",
+        categorias: ["psicologia"], 
+        capaUrl: "https://m.media-amazon.com/images/I/31l1tlkRDeL.jpg",
+        pdfUrl: "./livrospdf/Aprendizagem_infantil_uma_abordagem_da_neurociência,_economia_e.pdf"
+    },
+    {
+        titulo: "A Questão da Consciência na Psicologia de Wilhelm Wundt",
+        categorias: ["história da psicologia"],
+        capaUrl: "https://sapiens-psi.com.br/image/cache/catalog/Imagens/TN500_Modelo%20par%20Capa-1200x1200.jpg",
+        pdfUrl: "./livrospdf/Artigo_A Questão da Consciência na Psicologia de Wilhelm Wundt.pdf"
+    },
+    {
+        titulo: "As Coisas que Você vê quando",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/51Rh4tVjGcL._SY445_SX342_ControlCacheEqualizer_.jpg",
+        pdfUrl: "./livrospdf/As Coisas que Voce so ve Quando - Haemin Sunim.pdf"
+    },
+    {
+        titulo: "Como chegar ao sim com você mesmo",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/71PdRYLs5FL._SL1500_.jpg",
+        pdfUrl: "./livrospdf/Como-chegar-ao-sim-com-você-mesmo.pdf"
+    },
+    {
+        titulo: "Desenvolvimento Psicológico e Educação",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/818ZTLXmBvL._SL1500_.jpg",
+        pdfUrl: "./livrospdf/Desenvolvimento Psicologico e Educação.pdf"
+    },
+    {
+        titulo: "DSM-5-TR",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/41hYgeDPKmL._SY445_SX342_ControlCacheEqualizer_.jpg",
+        pdfUrl: "./livrospdf/DSM-5-TR.pdf"
+    },
+    {
+        titulo: "Elisabeth Kubler-Ross: A Roda da Vida",
+        categorias: ["psicologia"], 
+        capaUrl: "https://m.media-amazon.com/images/I/512kRoivhpL._SL1050_.jpg",
+        pdfUrl: "./livrospdf/Elisabeth Kluber-Ross, M. D. - A Roda da Vida.pdf"
+    },
+    {
+        titulo: "Fabio Herrmann: O que é Psicanálise",
+        categorias: ["psicanálise"],
+        capaUrl: "https://m.media-amazon.com/images/I/61WaX8ycq5L._SL1026_.jpg",
+        pdfUrl: "./livrospdf/Fabio Herrmann - O que é Psicanálise.pdf"
+    },
+    {
+        titulo: "FIO CRUZ: Comportamento Suicida e autolesão infância e adolescência",
+        categorias: ["psicologia"],
+        capaUrl: "https://fiocruz.br/sites/fiocruz.br/files/imagensPortal/comprtamento_suicida_materia.jpeg",
+        pdfUrl: "./livrospdf/FIO CRUZ - Comportamento Suicida e autolesão infância e adolescência.pdf"
+    },
+    {
+        titulo: "Kovács, M. J.: Morte e Desenvolvimento Humano",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/81mNzYBHuTL._SL1500_.jpg",
+        pdfUrl: "./livrospdf/KOVÁCS, M. J. - Morte e Desenvolvimento Humano.pdf"
+    },
+    {
+        titulo: "Lipovetsky, Gilles: Os Tempos Hipermodernos",
+        categorias: ["filosofia", "sociologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/51sp52iQHfL._SL1032_.jpg",
+        pdfUrl: "./livrospdf/LIPOVETSKY, Gilles. Os Tempos Hipermodernos.pdf"
+    },
+    {
+        titulo: "Coleção Gestalt Terapia: A Clínica e a Relação Terapêutica",
+        categorias: ["psicologia", "gestalt"],       
+        capaUrl: "https://i0.wp.com/www.gruposummus.com.br/wp-content/uploads/2020/01/9788532310040.jpg?fit=1181%2C1770&ssl=1",
+        pdfUrl: "./livrospdf/Livro_03_Coleção_Gestalt_Terapia_A_Clínica_a_Relação_Terapêutica.pdf"
+    },
+    {
+        titulo: "História da Psicologia: Rumos e Perspectivas",
+        categorias: ["história da psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/81xhei-KlbL._SL1500_.jpg",
+        pdfUrl: "./livrospdf/LIVRO_Historia_da_Psicologia_Rumos_e_per.pdf"
+    },
+    {
+        titulo: "Luto: Estudos Sobre a Perda na Vida Adulta",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/716icrt5RcL._SL1500_.jpg",
+        pdfUrl: "./livrospdf/Livro_Luto_Estudos_Sobre_a_Perda_Na_Vida_Adulta_1_Colin_Murray_Parkes.pdf",
+    },
+    
+    {
+        titulo: "O Homem e Seus Símbolos",
+        categorias: ["psicanálise", "psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/91HKfbXRVHL._SL1500_.jpg",
+        pdfUrl: "./livrospdf/O-Homem-e-Seus-Simbolos-Carl-G-Jung.pdf"
+    },    
+    {
+        titulo: "Sobre a morte e o morrer",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/91en-ofKtfL._SL1500_.jpg",
+        pdfUrl: "./livrospdf/SOBRE_A_MORTE_E_O_MORRER_Elisabeth_Kuble.pdf"
+    },
+    {
+        titulo: "Neuropsicologia da Criança: Intervenção Neuropsicológica Infantil",
+        categorias: ["neuropsicologia", "psicologia"],
+        capaUrl: "./capa livros/intervencao.png",
+        pdfUrl: "./livrospdf/NEUROPSICOLOGIA_CRIANÇA_Intervenção_Neuropsicológica_Infantil.pdf"
+    },
+    ,
+    {
+        titulo: "Divorcio dos pais sentimentos e percepcoes das crianças",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/71JsUPm0e1L._SL1500_.jpg",
+        pdfUrl: "./livrospdf/Divorcio_dos_pais_sentimentos_e_percepcoes_das_cri.pdf"
+    },
+
+    
+];
+
+
+function criarUrlDeCompartilhamento(titulo) {
+    const idParaFoco = titulo.toLowerCase().replace(/\s+/g, '-');
+    // Adiciona a página atual ao link para manter a navegação ao compartilhar
+    return `${window.location.origin}${window.location.pathname}?page=${paginaAtual}#${idParaFoco}`;
+}
+
+function copiarLinkDoLivro(titulo, botao) {
+    const linkCompleto = criarUrlDeCompartilhamento(titulo);
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(linkCompleto).then(() => {
+            botao.innerHTML = '<i class="fa-solid fa-square-check"></i>';
+            setTimeout(() => {
+                botao.innerHTML = '<span><i class="fa-solid fa-share-from-square"></i></span>'; 
+            }, 1500);
+        }).catch(err => {
+            console.error('Erro ao copiar o link: ', err);
+            alert(`Falha ao copiar. Copie manualmente: ${linkCompleto}`);
+        });
+    } else {
+        alert(`O seu navegador não suporta cópia automática. Copie manualmente: ${linkCompleto}`);
+    }
+}

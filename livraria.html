@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Imports -->
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+   
+    <!-- Font Awesome (Ícones)   -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Livraria Online</title>
+</head>
+
+<body>
+   
+
+<header class="header">
+    <nav class="navbar">
+        <div class="hamburguer-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <span class="text-menu">MENU</span>
+        
+      <ul class="nav-links">
+    
+            <li> 
+            <a href="./index.html">  <img src="./icons/casa-white.svg" alt=""> <span>Blog</span></a>
+            </li>
+            <li>
+            
+            <a  href="./livraria.html"> <img src="./icons/book-alt-white.svg" alt=""> <span>Livraria</span></a>
+            </li>
+            
+            <li>
+            <a href="./faca-uma-doacao.html">  <img src="./icons/cuidado-white.svg" alt="">  <span>Doaçao</span></a>
+            </li>
+            <li>
+           
+            <a href="./PedirLivros.html">  <img src="./icons/download-white.svg" alt="">  <span>Pedir Livro</span></a>
+            </li>
+        </ul>
+    </nav>
+
+<h1>Livraria Online</h1>
+
+    <div class="links">
+        <ul>
+
+            
+            <li> 
+            <a href="./index.html">  <img src="./icons/casa.svg" alt=""> <span>Blog</span></a>
+            </li>
+            <li class="ativo">
+            
+            <a  href="./livraria.html"> <img src="./icons/book-alt-white.svg" alt=""> <span>Livraria</span></a>
+            </li>
+            
+            <li>
+            <a href="./faca-uma-doacao.html">  <img src="./icons/cuidado.svg" alt="">  <span>Doaçao</span></a>
+            </li>
+            <li>
+           
+            <a href="./PedirLivros.html">  <img src="./icons/download.svg" alt="">  <span>Pedir Livro</span></a>
+            </li>
+        </ul>
+    </div>
+</header>
+
+    <div class="pesquisadores">
+            <div class="header-filtro">
+                <button class="filtro-button" id="botao">
+                    CATEGORIAS
+                    <i id="seta" class="fa-solid fa-angle-right icone"></i>
+                </button>
+                <div class="filtro" id="filtro">
+                    <div class="botoes-filtro">
+                        <span style="font-size: 16px; border-bottom: 2px solid #153449; margin-left: 10px; font-weight: 500; padding-bottom: 10px; margin-top: 20px;">Abordagens psicologia</span>
+                        <button data-categoria="psicanálise">Psicanálise</button>
+                        <button data-categoria="gestalt">Gestalt</button>
+                        <button data-categoria="TCC">TCC</button> 
+                          <span style="font-size: 16px; border-bottom: 2px solid #153449; margin-left: 10px; font-weight: 500;padding-bottom: 10px;">Categorias gerais</span>
+                        <button data-categoria="todos">Mostrar Todos</button>
+                        <button data-categoria="psicologia">Psicologia</button>
+                        <button data-categoria="filosofia">Filosofia</button>
+                        <button data-categoria="psicologia-analitica">psicologia analítica</button> 
+                        <button data-categoria="financas">Finanças</button>
+                        <button data-categoria="literatura">Literatura</button>
+                        <button data-categoria="neuropsicologia">Neuropsicologia</button>
+                        <button data-categoria="educacao">Educaçao</button>
+                        <button data-categoria="história da psicologia">História da psicologia</button>
+                        <button data-categoria="sociologia">Sociologia</button> 
+                         <button data-categoria="psicopatologia">Psicopatologia</button> 
+                        <button data-categoria="tanatologia">Tanatologia</button> 
+                        <button data-categoria="artigo">artigo</button> 
+     
+
+
+                    </div>
+                </div>
+
+                
+            </div>
+            <div class="buscador">
+                <input type="text" id="buscarLivro" placeholder="Busque um livro...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+           
+        </div>
+
+             <h5 >🚨 ATENÇÂO 🚨 <br> Pode demorar um pouco, mas o PDF será carregado.</h5>
+         
+
+    <main>
+
+          <div id="paginacao-livros" class="paginacao">
+    </div>
+
+        <div class="livrarias" id="container-livros">
+            <!-- Os cards serão inseridos aqui pelo JavaScript -->
+        </div>
+
+      
+    </main>
+
+    
+
+    <script src="./scripts/js.js"></script>
+    <script src="./scripts/livrosinseris.js"></script>
+
+
+</body>
+
+</html>

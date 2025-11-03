@@ -1,0 +1,41 @@
+
+          .categorias-video {
+            padding: 20px 0;
+          }
+          
+           .titulo-video{
+            width: 1200px;
+            margin-bottom: 90px;
+          }
+
+          .categorias-video span {
+
+            font-size: 12px;
+            padding: 10px 24px;
+            border-radius: 12px;
+            background-color: rgb(235, 91, 0, 0.8);
+            color: white;
+            font-weight: 600;
+            
+          }
+          .card-videos {
+            width: 1300px;
+            height: 1000px;
+            margin-top: 90px;
+            margin-bottom: 90px;
+
+          }
+
+          .card-video {
+            padding-top: 90px;
+       
+            border-bottom: 5px solid black ;
+            margin-left: 120px;
+          }
+         .card-video iframe {
+            min-width: 1200px;
+            min-height: 700px ;
+            border-radius: 12px;
+            outline: none;
+            border: 2px solid transparent;
+          }

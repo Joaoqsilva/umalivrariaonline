@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Solicitação de Livros</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="/style/pedirlivro.css">
+    <!-- Font Imports (Mantendo o estilo elegante da livraria) -->
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    
+</head>
+<body>
+
+    
+  
+
+<header class="header">
+    <nav class="navbar">
+        <div class="hamburguer-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <span class="text-menu">MENU</span>
+        
+    <ul class="nav-links">
+    
+            <li> 
+            <a href="./index.html">  <img src="./icons/casa-white.svg" alt=""> <span>Blog</span></a>
+            </li>
+            <li>
+            
+            <a  href="./livraria.html"> <img src="./icons/book-alt-white.svg" alt=""> <span>Livraria</span></a>
+            </li>
+            
+            <li>
+            <a href="./faca-uma-doacao.html">  <img src="./icons/cuidado-white.svg" alt="">  <span>Doaçao</span></a>
+            </li>
+            <li>
+           
+            <a href="./PedirLivros.html">  <img src="./icons/download-white.svg" alt="">  <span>Pedir Livro</span></a>
+            </li>
+        </ul>
+    </nav>
+
+<h1>Livraria Online</h1>
+
+    <div class="links">
+        <ul>
+
+            
+            <li> 
+            <a href="./index.html">  <img src="./icons/casa.svg" alt=""> <span>Blog</span></a>
+            </li>
+            <li>
+            
+            <a  href="./livraria.html"> <img src="./icons/book-alt.svg" alt=""> <span>Livraria</span></a>
+            </li>
+            
+            <li>
+            <a href="./faca-uma-doacao.html">  <img src="./icons/cuidado.svg" alt="">  <span>Doaçao</span></a>
+            </li>
+               <li class="ativo">
+           
+            <a href="./PedirLivros.html">  <img src="./icons/download-white.svg" alt="">  <span>Pedir Livro</span></a>
+            </li>
+        </ul>
+    </div>
+</header>
+
+    <main>
+
+    <div class="form-container">
+        <h2>Solicitar um Livro</h2>
+        <form name="book-request" netlify>
+            <div class="form-group">
+                <label for="book-title">Título do Livro</label>
+                <input type="text" id="book-title" name="book-title" required>
+            </div>
+            <div class="form-group">
+                <label for="author">Autor</label>
+                <input type="text" id="author" name="author">
+            </div>
+            <div class="form-group">
+                <label for="details">Detalhes e Sinopse (opcional)</label>
+                <textarea id="details" name="details" placeholder="Ex: 'É um livro de ficção científica sobre...' ou 'Não sei o título, mas o autor é...'" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="email">Seu Email para contato</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="btns">
+                <button type="submit" class="btn-submit">Enviar Pedido</button>
+                </button>
+            </div>
+            <div>
+
+            </div>
+        </form>
+    </div>
+
+    </main>
+
+
+    <script src="./scripts/js.js"></script>
+    
+</body>
+</html>

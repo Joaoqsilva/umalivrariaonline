@@ -1,0 +1,133 @@
+
+        /* Cores e fontes mantidas do design anterior */
+        .primary-color { color: #0b1a24; }
+        .secondary-color { color: #6c757d; }
+        .bg-primary { background-color: #0b1a24; }
+        .bg-background { background-color: #f8f9fa; }
+        .bg-card { background-color: #ffffff; }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+
+            position: relative;
+            right: 8px;
+
+        }
+
+     
+        /* 1. Link Voltar para a Livraria */
+        .back {
+            align-self: flex-start;
+            
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 0;
+            border-bottom: 1px solid transparent;
+            transition: color 0.2s, border-bottom 0.2s;
+            display: inline-flex;
+            align-items: center;
+           
+            
+        }
+
+        .btns {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* 2. Container Principal do Formulário (Card) */
+        .form-container {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            width: 100%;
+            max-width: 550px;
+            border-top: 5px solid #0b1a24; /* Linha de destaque */
+        }
+
+        h2 {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 800;
+            color: #0b1a24;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        /* 3. Estilos do Grupo de Campos */
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 900;
+            color: #343a40;
+            font-size: 0.95em;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            font-size: 1em;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            outline: none;
+            resize: vertical; /* Permite redimensionar apenas verticalmente para o textarea */
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #0b1a24;
+            box-shadow: 0 0 0 3px rgba(11, 26, 36, 0.15); /* Sombra suave da cor primária */
+        }
+
+        textarea {
+            min-height: 100px;
+        }
+        
+        /* 4. Botão de Envio */
+        .btn-submit {
+            width: 100%;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            background-color: #0b1a24; /* Cor primária escura */
+            color: white;
+            transition: background-color 0.2s, transform 0.1s, box-shadow 0.3s;
+            margin-top: 15px;
+        }
+
+        .btn-submit:hover {
+            background-color: #061016; /* Tom mais escuro no hover */
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsividade para telas menores */
+        @media (max-width: 599px) {
+            .form-container {
+                padding: 25px;
+                border-radius: 0;
+            }
+            body {
+                padding: 0;
+            }
+          
+        }
+ 

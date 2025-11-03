@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Imports -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <!-- Font Awesome (Ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/qrcode.css">
+    <title>Livraria Online</title>
+
+</head>
+
+<body>
+
+
+    <header class="header">
+        <!-- Navegação Mobile (Exibida como um menu lateral em telas pequenas) -->
+        <nav class="navbar">
+            <div class="hamburguer-icon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+
+            </div>
+            <span class="text-menu">MENU</span>
+
+            <ul class="nav-links">
+                <img src="./icons/casa-white.svg" alt="">
+                <li>
+
+                    <a href="./index.html">Home</a>
+                </li>
+
+                <img src="./icons/book-alt-white.svg" alt="">
+                <li>
+                    <a href="./livraria.html">Livraria</a>
+                </li>
+
+
+                <img src="./icons/caixa-de-selecao-white.svg" alt="">
+                <li>
+                    <a href="./Livros-pedidos.html">Pedidos Realizados</a>
+                </li>
+
+
+                <img src="./icons/codigo-qr-white.png" alt="">
+                <li>
+                    <a href="./gerarqr.html">Gerador de Qrcode</a>
+                </li>
+
+
+                <img src="./icons/cuidado-white.svg" alt="">
+                <li>
+                    <a href="./faca-uma-doacao.html">Faça uma doação</a>
+                </li>
+
+                <img src="./icons/download-white.svg" alt="">
+                <li>
+                    <a href="./PedirLivros.html">PEÇA UM LIVRO</a>
+                </li>
+            </ul>
+
+
+
+        </nav>
+
+        <h1>Livraria Online</h1>
+
+        <!-- Navegação Desktop (Removido aqui e movido para nav.navbar em mobile) -->
+        <div class="links">
+            <ul>
+
+                <li>
+                    <img src="./icons/casa.svg" alt="">
+                    <a href="./index.html">Home</a>
+                </li>
+
+
+
+                <li>
+                    <img src="./icons/book-alt.svg" alt="">
+                    <a href="./livraria.html">Livraria</a>
+                </li>
+
+
+                <li>
+                    <img src="./icons/caixa-de-selecao.svg" alt="">
+                    <a href="./Livros-pedidos.html">Pedidos Realizados</a>
+
+                </li>
+
+
+                <li>
+                          <img src="./icons/codigo-qr.svg" alt="">
+                    <a href="./gerarqr.html">Gerador de Qrcode</a>
+                </li>
+
+
+                <li>
+                    <img src="./icons/cuidado.svg" alt="">
+                    <a href="./faca-uma-doacao.html">Faça uma doação</a>
+                </li>
+
+                <li>
+                    <img src="./icons/download.svg" alt="">
+                    <a href="./PedirLivros.html">PEÇA UM LIVRO</a>
+                </li>
+
+
+            </ul>
+
+
+        </div>
+
+        <!-- Barra de Busca e Filtros -->
+
+    </header>
+
+    <body>
+        <div class="content-container">
+            <div class="container">
+
+                <h1>Gerador de QR Code</h1>
+                <p>Digite o texto ou link e clique em "Gerar".</p>
+
+                <input type="text" id="input" placeholder="coloque seu link ou texto aqui">
+
+                <div id="qrcode"></div>
+
+                <div class="button-group">
+                    <button id="generateBtn" class="btn">Gerar QR Code</button>
+                    <a class="btn" id="downloadBtn" download="qrcode.png" style="display:none;">Baixar QR Code</a>
+                    <a class="btn secondary" href="./Index.html">Voltar para a livraria</a>
+                </div>
+
+
+            </div>
+        </div>
+
+        <script src="./scripts/js.js"></script>
+
+        <script>
+            const inputElement = document.getElementById("input");
+            const qrcodeElement = document.getElementById("qrcode");
+            const generateBtn = document.getElementById("generateBtn");
+            const downloadBtn = document.getElementById("downloadBtn");
+
+            // Inicialmente, gera um QR Code para um texto padrão
+            const qrcode = new QRCode(qrcodeElement, {
+                text: "Exemplo",
+                width: 300,
+                height: 300,
+                colorDark: "#000000",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+
+            // Evento para gerar o QR Code
+            generateBtn.addEventListener('click', function () {
+                const text = inputElement.value;
+
+                if (text) {
+                    // Limpa o QR Code anterior e gera um novo
+                    qrcode.clear();
+                    qrcode.makeCode(text);
+
+                    // Aguarda um curto período para a renderização e define o link de download
+                    setTimeout(() => {
+                        const canvas = qrcodeElement.querySelector('canvas');
+                        if (canvas) {
+                            downloadBtn.href = canvas.toDataURL("image/png");
+                            downloadBtn.style.display = 'inline-block';
+                        }
+                    }, 100);
+                } else {
+                    // Se o campo estiver vazio, esconde o botão de download
+                    downloadBtn.style.display = 'none';
+                }
+            });
+        </script>
+
+    </body>
+
+</html>
