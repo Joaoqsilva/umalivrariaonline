@@ -1,4 +1,471 @@
 const listaDeLivros = [
+    
+    
+    
+    {
+        titulo: "Deu zebra Descobrindo Superdotação",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/71JVPjvbJLL._SL1359_.jpg",
+        pdfUrl: "livrospdf/Deu zebra Descobrindo a Superdotação.pdf",
+        linkOficial: "https://amzn.to/47VCMUR"
+    },
+
+    {
+        titulo: "Calibã e a bruxa - Silvia Federici",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/61jn+HsNSwL._SL1200_.jpg",
+        pdfUrl: "livrospdf/Calibã e a bruxa - Silvia Federici.pdf",
+        linkOficial: "https://amzn.to/4oWuli0"
+    },
+
+    {
+        titulo: "Psicoterapias - Abordagens Atuais",
+        categorias: ["psicologia", "terapia"],
+        capaUrl: "https://m.media-amazon.com/images/I/71zVFEqek-L._SL1500_.jpg",
+        pdfUrl: "livrospdf/Psicoterapias - Abordagens Atuais - 4ª Ed - 2019 Cordioli.pdf",
+        linkOficial: "https://amzn.to/3WGPdO3"
+    },
+
+    {
+        titulo: "PSICOPATA - ANTISSOCIAL- Comportamento a personalidade antissocial e mente criminal sin possibil",
+        categorias: ["psicologia"],
+        capaUrl: "./capa livros/screenshot_15.png",
+        pdfUrl: "livrospdf/PSICÓPATA_-EL-ANTISOCIAL-Cómo-reconocer-la-personalidad-antisocial-y-la-mente-criminal-sin-posibilid.pdf",
+        linkOficial: ""
+    },
+
+    {
+        titulo: "Cartilha Menopausa 251019023",
+        categorias: ["psicologia"],
+        capaUrl: "capa livros/Screenshot_16.png",
+        pdfUrl: "livrospdf/Cartilha-Menopausa_251019_023013.pdf",
+        linkOficial: ""
+    },
+
+    {
+        titulo: "Artigo Borderline",
+        categorias: ["psicologia", "transtornos"],
+        capaUrl: "https://imgs.search.brave.com/_YoHTch9FViHns6eKyh_aKmYYynXIs2_beAbr5xCnrg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMjE4/OTM5NjY0My9waG90/by9jb25jZXB0dWFs/LWFydC1mb3ItYm9y/ZGVybGluZS1wZXJz/b25hbGl0eS1kaXNv/cmRlci1mZWF0dXJp/bmctbWFuLWhvbGRp/bmctdW1icmVsbGEt/YWdhaW5zdC5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9TXFm/VUNoeDFUSGhkdlFU/MWlDZUJPTk9Mb1pk/ZUZVSk1fblV3VHNG/RW1wOD0",
+        pdfUrl: "livrospdf/Artigo Borderline.pdf",
+        linkOficial: ""
+    },
+
+    {
+        titulo: "Jogos e dinamicas de grupo para pessoas com deficiencias",
+        categorias: ["psicologia"],
+        capaUrl: "https://image.slidesharecdn.com/jogosedinamicasdegrupo-pessoacomdeficiencia-171116232831/75/Jogos-e-Dinamicas-de-grupo-para-pessoa-com-deficiencia-1-2048.jpg",
+        pdfUrl: "livrospdf/Jogos e dinamicas de grupo para pessoas com deficiencias.pdf",
+        linkOficial: ""
+    },
+
+    {
+        titulo: "José Fonseca Psicodrama da Loucura",
+        categorias: ["psicologia", "psicodrama"],
+        capaUrl: "https://m.media-amazon.com/images/I/51F2VM1lQpL._SL1500_.jpg",
+        pdfUrl: "livrospdf/José Fonseca_Psicodrama da Loucura.pdf",
+        linkOficial: "https://amzn.to/43QwBPq"
+    },
+
+    {
+        titulo: "100 Jogos para grupos uma abordagem psicodrama",
+        categorias: ["psicologia", "psicodrama"],
+        capaUrl: "https://m.media-amazon.com/images/I/81sHqDHgb7L._SL1500_.jpg",
+        pdfUrl: "livrospdf/100_Jogos_para_grupos_uma_abordagem_psicodrama.pdf",
+        linkOficial: "https://amzn.to/43aezYj"
+    },
+
+    {
+        titulo: "Livro Psicodiagnostico",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/81CVhqr0Y1L._SL1500_.jpg",
+        pdfUrl: "livrospdf/Livro-Psicodiagnostico-Hutz.pdf",
+        linkOficial: "https://amzn.to/4oU0uGW"
+    },
+    {
+        titulo: "A síndrome da boazinha - Harriet B. Braiker",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/71QRHB9PAcL._SL1500_.jpg",
+        pdfUrl: "livrospdf/A sindrome da boazinha - Harriet B. Braiker.pdf",
+        linkOficial: "https://amzn.to/3WBj22D"
+    },
+
+    {
+        titulo: "corpos que sofrem",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/515PhIuQlaL._SL1177_.jpg",
+        pdfUrl: "corpos ques sofrem",
+        linkOficial: "https://amzn.to/3XamukK"
+    },
+
+   
+
+    {
+        titulo: "Manual de Identificação de Atas Habilidades Superdotado Susana",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/61klL2CDYoL._SL1000_.jpg",
+        pdfUrl: "livrospdf/Manual_de_identificação_de_Altas_Habilidades_Superdotação_Susana.pdf",
+        linkOficial: "https://amzn.to/4nH1xst"
+    },
+
+    {
+        titulo: "Os desafios da terapia - Irvin Yalom",
+        categorias: ["psicologia", "terapia"],
+        capaUrl: "https://m.media-amazon.com/images/I/71FzisIRZsL._SL1500_.jpg",
+        pdfUrl: "livrospdf/Os desafios da terapia - Irvin D. Yalom.pdf",
+        linkOficial: "https://amzn.to/3WAfAFr"
+    },
+
+    {
+        titulo: " Sociedade do cansaço",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/615xknuR6CL._SL1500_.jpg",
+        pdfUrl: "livrospdf/SOCIEDADE DO CANSAÇO.pdf",
+        linkOficial: "https://amzn.to/4onoJ03"
+    },
+
+   
+
+    {
+        titulo: "Introdução à Terapia de Aceitação e Compromisso",
+        categorias: ["psicologia", "terapia"],
+        capaUrl: "https://m.media-amazon.com/images/I/61fhGj27NNL._SL1498_.jpg",
+        pdfUrl: "livrospdf/Terapia de aceitação e compromisso.pdf",
+        linkOficial: "https://amzn.to/47zQVWp"
+    },
+
+    {
+        titulo: "Guia de Sobrevivenca Para Vitimas de Narcisistas Malignos Kurt Mendonca Kurt",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/61HzyOK570L._SL1360_.jpg",
+        pdfUrl: "livrospdf/Guia-de-Sobrevivência-Para-Vítimas-de-Narcisistas-Malignos-_Kurt-Mendonça-_Mendonça_-Kurt__-_Z-Libra.pdf",
+        linkOficial: "https://amzn.to/3JJ0Xg4"
+    },
+
+    {
+        titulo: "O Segredo da Criança Interior: Aprenda a acolher suas vulnerabilidades e desperte sua força interior",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/6131e-Ci16L._SL1500_.jpg",
+        pdfUrl: "livrospdf/LIVRO O SEGREDO DA CRIANÇA INTERIOR .pdf",
+        linkOficial: "https://amzn.to/4qJMYai"
+    },
+
+    {
+        titulo: "Terapias Comportamentais de Terceira Geração: Guia Para Profissionais",
+        categorias: ["psicologia", "terapia"],
+        capaUrl: "https://m.media-amazon.com/images/I/51ZVhaSE35L.jpg",
+        pdfUrl: "livrospdf/Terapias comportamentais de terceira geração guia para profissionais.pdf",
+        linkOficial: "https://amzn.to/4qFMLVE"
+    },
+
+    {
+        titulo: "Gestalt Terapia e Experiência de Campo: dos Fundamentos à Prática Clínica ",
+        categorias: ["psicologia", "terapia"],
+        capaUrl: "https://m.media-amazon.com/images/I/41Abgg8bBCL._SL1000_.jpg",
+        pdfUrl: "livrospdf/Gestalt-terapia e experincia de campo - Marcus Czar Belmino.pdf",
+        linkOficial: ""
+    },
+
+    {
+        titulo: "Introdução à Psicanálise de Crianças - O Lugar dos Pais",
+        categorias: ["psicologia", "crianças"],
+        capaUrl: "https://m.media-amazon.com/images/I/518VU24FHQL._SL1000_.jpg",
+        pdfUrl: "livrospdf/Introducao-a-psicanalise-de-criancas-o-lugar-dos-pais-pr_.pdf",
+        linkOficial: "https://amzn.to/3LoiCtV"
+    },
+
+    {
+        titulo: "Manual de avaliação e treinamento das habilidades sociais",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/91fVmerSPHL._SL1500_.jpg",
+        pdfUrl: "livrospdf/manual-de-avaliaao-e-treinamento-das-habilidades-sociais-vicente-caballo-pdf-free.pdf",
+        linkOficial: "https://amzn.to/4nIl3oK"
+    },
+
+    {
+        titulo: "Ansiedade - Como enfrentar o mal do século - Augusto Cury",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/71K63fWqCAL._SL1500_.jpg",
+        pdfUrl: "livrospdf/Ansiedade - Como enfrentar o mal do século - Augusto Cury.pdf",
+        linkOficial: "https://amzn.to/49B0rLy"
+    },
+
+   
+
+    {
+        titulo: "Vida precária (Col. Filô): Os poderes do luto e da violência",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/91ryCdbXmzL._SL1500_.jpg",
+        pdfUrl: "livrospdf/Livro Vida precaria os poderes do luto e da violencia - OCR.pdf",
+        linkOficial: "https://amzn.to/47F2N9Q"
+    },
+
+    {
+        titulo: "Manual Clínico dos Transtornos Psicológicos: Tratamento Passo a Passo",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/716xzl+IdpL._SL1500_.jpg",
+        pdfUrl: "livrospdf/Manual Clínico dos Transtornos Psicológicos_Tratamento_Passo_a.pdf",
+        linkOficial: "https://amzn.to/4oNOmHb"
+    },
+
+    {
+        titulo: "123 Técnicas de Psicoterapia Relacional Sistêmica ",
+        categorias: ["psicologia", "terapia"],
+        capaUrl: "https://m.media-amazon.com/images/I/51+1-FAlJjL._SL1000_.jpg",
+        pdfUrl: "livrospdf/123 técnicas de psicoterapia relacional sistêmica.pdf",
+        linkOficial: "https://amzn.to/4oqhQLG"
+    },
+
+    {
+        titulo: "Duple Excepcionalidade Atas Habilidades Superdotado No Transtorno",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/81g5bw-rwKS._SL1500_.jpg",
+        pdfUrl: "livrospdf/Dupla_Excepcionalidade_Altas_Habilidades_Superdotação_Nos_Transtornos.pdfd",
+        linkOficial: "https://amzn.to/3JEBDrp"
+    },
+
+    {
+        titulo: "Disciplina positiva para crianças de 0 a 3 anos: como criar filhos confiantes e capazes",
+        categorias: ["psicologia", "crianças"],
+        capaUrl: "https://m.media-amazon.com/images/I/71ckWTzEJIL._SL1500_.jpg",
+        pdfUrl: "livrospdf/Disciplina Positiva Para Crianças.pdf",
+        linkOficial: "https://amzn.to/4oS4gAw"
+    },
+
+    {
+        titulo: "A cama varanda jardim nós ideias respeito amor sexo",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/811Qq3dFH5L._SL1500_.jpg",
+        pdfUrl: "livrospdf/A_cama_na_varanda_arejando_nossas_idéias_a_respeito_de_amor_e_sexo.pdf",
+        linkOficial: "https://amzn.to/4hMCFOS"
+    },
+
+    {
+        titulo: "Aprendendo ACT - Livro Completo",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/41W+CVzKHDL.jpg",
+        pdfUrl: "livrospdf/Aprendendo ACT - Livro Completo.pdf",
+        linkOficial: "https://amzn.to/4oWE87G"
+    },
+
+    {
+        titulo: "Terapia Cognitivo-Comportamental Para Transtorno Bipolar. Guia do Terapeut",
+        categorias: ["psicologia","TCC"],
+        capaUrl: "https://m.media-amazon.com/images/I/41kiguKh4HL._SL1000_.jpg",
+        pdfUrl: "livrospdf/Transtorno Bipolar e TCC - Guia do Terapeuta.pdf",
+        linkOficial: "https://amzn.to/492bHk3"
+    },
+    {
+        titulo: "Psiquiatria saude mental e clinica da impulsividade",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/71fb6ZusDsL._SL1500_.jpg",
+        pdfUrl: "livrospdf/Psiquiatria, saúde mental e a clínica da impulsividade.pdf",
+        linkOficial: "https://amzn.to/43ah8cT"
+    },
+
+    // {
+    //     titulo: "Questionário de Crencas da Personalidade - Froma Reduza (com gabarito)[www.tcpardotos.com]",
+    //     categorias: ["psicologia"],
+    //     capaUrl: "./capa livros/questionário_de_crencas_da_personalidade_froma_reduza_com_gabaritowwwtcpardotoscom.webp",
+    //     pdfUrl: "livrospdf/Questionário_de_Crenças_da_Personalidade_-_Forma_Reduzida_(com_gabarito)_[www.tccparatodos.com][1].pdf",
+    //     linkOficial: ""
+    // },
+
+    {
+        titulo: "Saúde mental, gênero e dispositivos: cultura e processos de subjetivação ",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/61jlhk4LwCL._SL1426_.jpg",
+        pdfUrl: "livrospdf/Saúde mental, gênero e dispositivos - cultura e processos de subjetivação (ZANELLO, 2018).pdf",
+        linkOficial: "https://amzn.to/4nHGFSf"
+    },
+
+   
+    {
+        titulo: "Estratégias Lúdicas Para o Ensino da Criança com Deficiência",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/81dycVSH8CL._SL1500_.jpg",
+        pdfUrl: "livrospdf/Estrategias Ludicas para o Ensi - Kelem Zapparoli.pdf",
+        linkOficial: "https://amzn.to/4qNKx70"
+    },
+
+  
+
+   
+    {
+        titulo: "Disciplina Positiva - Jane Nelsen",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/71hWl8BZA3L._SL1297_.jpg",
+        pdfUrl: "livrospdf/Disciplina Positiva Para Crianças.pdf",
+        linkOficial: "https://amzn.to/47r7N2Z"
+    },
+
+    {
+        titulo: "Introdução à psicologia - Robert S. Feldman",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/912J0Pv+xaL._SL1500_.jpg",
+        pdfUrl: "livrospdf/Introdução à psicologia - Robert S. Feldman.pdf",
+        linkOficial: "https://amzn.to/493waVx"
+    },
+
+    {
+        titulo: "Vencendo a Timidez e a Ansiedade Social na Adolescência: Habilidades Baseadas na Terapia Cognitivo-comportamental e na Terapia de Aceitação e Compromisso",
+        categorias: ["psicologia", "crianças"],
+        capaUrl: "https://m.media-amazon.com/images/I/71WbloZKdSL._SL1500_.jpg",
+        pdfUrl: "livrospdf/Vencendo_a_timidez_e_a_ansiedade_social_na_adolesc_241007_152417.pdf",
+        linkOficial: "https://amzn.to/4oY2D4p"
+    },
+
+    {
+        titulo: "O cérebro de luto Mary-Frances O Connor",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/61tISgsEArL._SL1500_.jpg",
+        pdfUrl: "livrospdf/O cérebro de luto_Mary-Frances O Connor_Português.pdf",
+        linkOficial: "https://amzn.to/4oSxhMf"
+    },
+
+    {
+        titulo: "Teoria social cognitiva - Bandura forma reduzida ",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/51hEvbX80EL.jpg",
+        pdfUrl: "livrospdf/TEORIA SOCIAL COGNITIVA - Bandura.pdf",
+        linkOficial: "https://amzn.to/3LokWkD"
+    },
+
+    {
+        titulo: "Pra vida toda valera pena viver Pequeno manual para envelhecer",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/71H41M25yjL._SL1500_.jpg",
+        pdfUrl: "livrospdf/Pra_vida_toda_valer_a_pena_viver_Pequeno_manual_para_envelhecer.pdf",
+        linkOficial: "https://amzn.to/3JsEML3"
+    },
+
+    {
+        titulo: "201 Dinâmicas de Grupo",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/51-Tx7uIa5L._SL1000_.jpg",
+        pdfUrl: "livrospdf/201 Dinâmicas de Grupo.pdf",
+        linkOficial: "https://amzn.to/3JLGW8D"
+    },
+
+
+    
+    {
+        titulo: "Zygmunt Bauman Modernidade Liquida",
+        categorias: ["psicologia"],
+        capaUrl: "https://m.media-amazon.com/images/I/51RuPVku+sS._SL1500_.jpg",
+        pdfUrl: "livrospdf/Zygmunt_Bauman_Modernidade_Liquida.pdf",
+        linkOficial: "https://amzn.to/43gWcky"
+    },
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+//      {
+//         titulo: "A eficácia da teleterapia síncrona em comparação com a terapia presencial: uma meta-análise de ensaios clínicos randomizados",
+//         categorias: ["psicologia","artigo"],
+//         capaUrl: "./capa livros/202_1735_001_pt_br.webp",
+//         pdfUrl: "livrospdf/2022-17335-001 pt-BR.pdf",
+//         linkOficial: ""
+//     },
+    
+//      {
+//         titulo: "Psicoterapia Psicodramatica com Criancas uma proposta Socionomica",
+//         categorias: ["psicologia", "crianças", "terapia", "psicodrama"],
+//         capaUrl: "./capa livros/psicoterapia_psicodramatica_com_criancas_uma_proposta_socionomica.webp",
+//         pdfUrl: "livrospdf/Psicoterapia Psicodramática com Crianças uma proposta Socionômica.pdf",
+//         linkOficial: ""
+//     },
+    
+    
+//      {
+//         titulo: "Edward Singer - O Aquietapo",
+//         categorias: ["psicologia"],
+//         capaUrl: "./capa livros/edward_singer_o_aquietapo.webp",
+//         pdfUrl: "livrospdf/Edward Edinger - Ego e Arquétipo.pdf",
+//         linkOficial: ""
+//     },
+    
+    
+//      {
+//         titulo: "HTTP-manual-e-de-interpreta-01-1",
+//         categorias: ["psicologia"],
+//         capaUrl: "./capa livros/http_manual_e_de_interpreta_01_1.webp",
+//         pdfUrl: "livrospdf/HTP-manual-e-guia-de-interpretacao-1-1-pdf.pdf",
+//         linkOficial: ""
+//     },
+
+
+
+
+//      {
+//         titulo: "Unidade-IV-Princiapios-EscolaPsico",
+//         categorias: ["psicologia"],
+//         capaUrl: "./capa livros/unidade_iv_princiapios_escolapsico.webp",
+//         pdfUrl: "Unidade-IV-Principais_Escolas_da_Psicologia",
+//         linkOficial: ""
+//     },
+
+//   {
+//         titulo: "TEXTO-2 Evolucao dos grupos",
+//         categorias: ["psicologia"],
+//         capaUrl: "./capa livros/texto_2_evolucao_dos_grupos.webp",
+//         pdfUrl: "livrospdf/TEXTO 02- Evolução dos  grupos.pdf",
+//         linkOficial: ""
+//     },
+    
+
+    // {
+    //     titulo: "Questionário de Crencas da Personalidade - Froma Reduza (com gabarito)[www.tcpardotos.com]",
+    //     categorias: ["psicologia"],
+    //     capaUrl: "./capa livros/questionário_de_crencas_da_personalidade_froma_reduza_com_gabaritowwwtcpardotoscom.webp",
+    //     pdfUrl: "livrospdf/Questionário_de_Crenças_da_Personalidade_-_Forma_Reduzida_(com_gabarito)_[www.tccparatodos.com][1].pdf",
+    //     linkOficial: ""
+    // },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+
+    
+    
     {
         titulo: "A Morte é um Dia Que Vale a Pena Viver",
         categorias: ["psicologia", "tanatologia"],
