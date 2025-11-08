@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Roda a Roda Jequiti - Jogo</title>
+  <style>
+    /* Reset e fonte */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial Black', Arial, sans-serif;
+    }
+
+    body {
+      background: #0C2B4E;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    /* Título dinâmico */
+    #titulo {
+      margin: 20px 0;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      color: #a0e7ff;
+      text-shadow: 0 0 10px #00aaff;
+      letter-spacing: 2px;
+    }
+
+    /* Quadro principal */
+    #quadro {
+      width: 90%;
+      max-width: 800px;
+      background: #0d1b5e;
+      border-radius: 25px;
+      padding: 20px;
+      box-shadow: 0 0 30px rgba(0, 0, 255, 0.6);
+      border: 8px solid #00aaff;
+      position: relative;
+    }
+
+    .linha {
+      display: grid;
+      grid-template-columns: repeat(15, 1fr);
+      gap: 4px;
+      margin-bottom: 8px;
+      justify-items: center;
+      align-items: center;
+    }
+
+    .quadrado {
+      width: 100%;
+      aspect-ratio: 1;
+      background: #0d1b5e;
+      border-radius: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 1.4rem;
+      color: transparent;
+      transition: all 0.3s ease;
+    }
+
+    .letra {
+      background: white;
+      color: transparent;
+      border: 2px solid #ccc;
+    }
+
+    .revelado {
+      color: black !important;
+    }
+
+    .piscar {
+      animation: piscarAmarelo 1s ease-in-out;
+    }
+
+    @keyframes piscarAmarelo {
+      0%, 100% { background: white; }
+      50% { background: #ffff00; box-shadow: 0 0 15px #ffff00; }
+    }
+
+    /* Inputs */
+    .inputs-container {
+      margin: 30px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      /* align-items: center; */
+    }
+
+    .input-group {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+   
+    }
+
+    label {
+      font-size: 1.1rem;
+      color: #a0e7ff;
+      /* min-width: 180px;
+      text-align: right; */
+    }
+
+    input {
+      padding: 10px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 8px;
+      width: 350px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    input#letra-input {
+      width: 60px;
+      font-weight: bold;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      background: #00aaff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-transform: uppercase;
+    }
+
+    button:hover {
+      background: #0088cc;
+      transform: scale(1.05);
+    }
+
+    /* Dica */
+    .dica-container {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .dica-container label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.2rem;
+      color: #ffff99;
+    }
+
+    #dica {
+      padding: 12px;
+      /* width: 80%; */
+      max-width: 500px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid #ffff99;
+      border-radius: 10px;
+      color: white;
+      font-size: 1.1rem;
+      text-align: center;
+    }
+
+    /* Mensagens */
+    #mensagem {
+      margin: 15px 0;
+      font-size: 1.2rem;
+      min-height: 30px;
+      text-align: center;
+      color: #ffdd00;
+    }
+
+    /* Vitória */
+    #vitoria {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    #vitoria h1 {
+      font-size: 4rem;
+      color: #ffff00;
+      text-shadow: 0 0 20px #ffff00;
+      animation: pulso 1.5s infinite;
+    }
+
+    @keyframes pulso {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    /* Confetes */
+    canvas#confetes {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    /* Letras usadas */
+    #letras-usadas {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      color: #aaa;
+    }
+
+    /* Responsivo */
+    @media (max-width: 600px) {
+      .input-group {
+        flex-direction: column;
+        text-align: center;
+      }
+      label { text-align: center; }
+      #quadro { padding: 15px; }
+      .linha { gap: 3px; }
+      .quadrado { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <h2 id="titulo"></h2>
+
+  <div id="quadro">
+    <div id="linhas-container"></div>
+  </div>
+
+  <div class="inputs-container">
+    <div class="input-group">
+      <!-- <label>INPUT PRA POR LETRA</label> -->
+      <input type="text" id="letra-input" maxlength="1" placeholder="A" />
+      <button id="btn-letra">Tentar Letra</button>
+    </div>
+
+    <div class="input-group">
+      <!-- <label>INPUT PRA ADIVINHAR PALAVRA</label> -->
+      <input type="text" id="palavra-input" placeholder="Digite a frase completa" />
+      <button id="btn-palavra">Descobrir Palavra</button>
+    </div>
+  </div>
+
+  <div id="mensagem"></div>
+  <div id="letras-usadas">Letras usadas: none</div>
+
+  <div class="dica-container">
+    <label>DICA</label>
+    <div id="dica"></div>
+  </div>
+
+  <!-- Tela de Vitória -->
+  <div id="vitoria">
+    <h1>VOCÊ GANHOU!</h1>
+    <canvas id="confetes"></canvas>
+  </div>
+
+  <script>
+    // === CONFIGURAÇÃO DO JOGO ===
+    const palavras = ["WATSON", "TORTURADOR", "BOLSONARO", "BOLSONARO"];
+    const dica = "BEHAVIORISMO";
+
+    // Elementos DOM
+    const titulo = document.getElementById('titulo');
+    const linhasContainer = document.getElementById('linhas-container');
+    const letraInput = document.getElementById('letra-input');
+    const btnLetra = document.getElementById('btn-letra');
+    const palavraInput = document.getElementById('palavra-input');
+    const btnPalavra = document.getElementById('btn-palavra');
+    const mensagem = document.getElementById('mensagem');
+    const letrasUsadasSpan = document.getElementById('letras-usadas');
+    const dicaDiv = document.getElementById('dica');
+    const vitoria = document.getElementById('vitoria');
+    const canvas = document.getElementById('confetes');
+
+    // Estado do jogo
+    let letrasUsadas = [];
+    let letrasCorretas = new Set();
+    let quadro = []; // [linha][coluna] = { letra, revelado }
+
+    // === INICIALIZAÇÃO ===
+    function init() {
+      titulo.textContent = `SERÃO ${palavras.length} PALAVRAS`;
+      dicaDiv.textContent = dica;
+
+      // Limpar quadro
+      linhasContainer.innerHTML = '';
+      quadro = [];
+
+      const maxCols = 15;
+      const linhas = palavras.length > 3 ? 3 : palavras.length;
+
+      // Criar linhas
+      for (let i = 0; i < 3; i++) {
+        const linhaDiv = document.createElement('div');
+        linhaDiv.className = 'linha';
+        linhaDiv.style.display = i < linhas ? 'grid' : 'none';
+        linhasContainer.appendChild(linhaDiv);
+
+        const row = [];
+        const palavra = i < palavras.length ? palavras[i] : '';
+        let colIndex = Math.floor((maxCols - palavra.length) / 2); // centralizar
+
+        for (let c = 0; c < maxCols; c++) {
+          const quad = document.createElement('div');
+          quad.className = 'quadrado';
+
+          if (i < palavras.length && c >= colIndex && c < colIndex + palavra.length) {
+            const letra = palavra[c - colIndex];
+            quad.classList.add('letra');
+            quad.dataset.letra = letra;
+            row.push({ el: quad, letra, revelado: false });
+          } else {
+            row.push({ el: quad, letra: null, revelado: false });
+          }
+          linhaDiv.appendChild(quad);
+        }
+        quadro.push(row);
+      }
+
+      atualizarLetrasUsadas();
+    }
+
+    // === FUNÇÕES DO JOGO ===
+    function tentarLetra() {
+      const input = letraInput.value.trim().toUpperCase();
+      if (!/^[A-ZÇ]$/.test(input)) {
+        mostrarMensagem('Digite uma letra válida!', 'orange');
+        return;
+      }
+      if (letrasUsadas.includes(input)) {
+        mostrarMensagem('Letra já tentada!', 'orange');
+        return;
+      }
+
+      letrasUsadas.push(input);
+      atualizarLetrasUsadas();
+      letraInput.value = '';
+
+      let encontrou = false;
+      const quadradosParaPiscar = [];
+
+      // Percorrer todo o quadro
+      for (let row of quadro) {
+        for (let cell of row) {
+          if (cell.letra === input && !cell.revelado) {
+            cell.revelado = true;
+            cell.el.classList.add('revelado');
+            cell.el.textContent = input;
+            quadradosParaPiscar.push(cell.el);
+            letrasCorretas.add(input);
+            encontrou = true;
+          }
+        }
+      }
+
+      if (encontrou) {
+        piscarQuadrados(quadradosParaPiscar);
+        mostrarMensagem(`Letra ${input} encontrada!`, '#90ee90');
+      } else {
+        mostrarMensagem(`Letra ${input} não existe.`, '#ff6b6b');
+      }
+
+      setTimeout(verificarVitoria, 1200);
+    }
+
+    function tentarPalavra() {
+      const tentativa = palavraInput.value.trim().toUpperCase();
+      const fraseCorreta = palavras.join(' ').toUpperCase();
+
+      if (tentativa === fraseCorreta) {
+        revelarTudo();
+        mostrarMensagem('PARABÉNS! Você acertou a frase!', '#90ee90');
+        setTimeout(mostrarVitoria, 1000);
+      } else {
+        mostrarMensagem('Errado! Tente novamente.', '#ff6b6b');
+      }
+      palavraInput.value = '';
+    }
+
+    function piscarQuadrados(quads) {
+      quads.forEach(q => q.classList.add('piscar'));
+      setTimeout(() => quads.forEach(q => q.classList.remove('piscar')), 1000);
+    }
+
+    function revelarTudo() {
+      for (let row of quadro) {
+        for (let cell of row) {
+          if (cell.letra && !cell.revelado) {
+            cell.revelado = true;
+            cell.el.classList.add('revelado');
+            cell.el.textContent = cell.letra;
+          }
+        }
+      }
+    }
+
+    function verificarVitoria() {
+      const todasLetrasReveladas = palavras.every(p => 
+        p.split('').every(letra => letrasCorretas.has(letra))
+      );
+
+      if (todasLetrasReveladas) {
+        mostrarVitoria();
+      }
+    }
+
+    function mostrarVitoria() {
+      vitoria.style.display = 'flex';
+      iniciarConfetes();
+    }
+
+    function mostrarMensagem(texto, cor = '#ffdd00') {
+      mensagem.textContent = texto;
+      mensagem.style.color = cor;
+      setTimeout(() => mensagem.textContent = '', 3000);
+    }
+
+    function atualizarLetrasUsadas() {
+      letrasUsadasSpan.textContent = 'Letras usadas: ' + 
+        (letrasUsadas.length ? letrasUsadas.join(', ') : 'nenhuma');
+    }
+
+    // === CONFETES ===
+    function iniciarConfetes() {
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const confetes = [];
+      const cores = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
+
+      class Confete {
+        constructor() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height - canvas.height;
+          this.vx = Math.random() * 4 - 2;
+          this.vy = Math.random() * 3 + 2;
+          this.size = Math.random() * 6 + 4;
+          this.color = cores[Math.floor(Math.random() * cores.length)];
+          this.angle = Math.random() * 360;
+          this.spin = Math.random() * 10 - 5;
+        }
+
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+          this.vy += 0.1;
+          this.angle += this.spin;
+          if (this.y > canvas.height) this.y = -20;
+        }
+
+        draw() {
+          ctx.save();
+          ctx.translate(this.x, this.y);
+          ctx.rotate(this.angle * Math.PI / 180);
+          ctx.fillStyle = this.color;
+          ctx.fillRect(-this.size/2, -this.size/2, this.size, this.size);
+          ctx.restore();
+        }
+      }
+
+      for (let i = 0; i < 200; i++) {
+        confetes.push(new Confete());
+      }
+
+      function animar() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        confetes.forEach(c => {
+          c.update();
+          c.draw();
+        });
+        requestAnimationFrame(animar);
+      }
+      animar();
+    }
+
+    // === EVENTOS ===
+    btnLetra.addEventListener('click', tentarLetra);
+    btnPalavra.addEventListener('click', tentarPalavra);
+
+    letraInput.addEventListener('keypress', e => {
+      if (e.key === 'Enter') tentarLetra();
+    });
+
+    palavraInput.addEventListener('keypress', e => {
+      if (e.key === 'Enter') tentarPalavra();
+    });
+
+    // Input só maiúsculas
+    letraInput.addEventListener('input', () => {
+      letraInput.value = letraInput.value.toUpperCase().slice(0,1);
+    });
+
+    // Inicializar
+    init();
+  </script>
+</body>
+</html>

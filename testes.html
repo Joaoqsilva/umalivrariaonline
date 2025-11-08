@@ -1,1 +1,521 @@
-<div class="tenor-gif-embed" data-postid="1546544451277511492" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/andresbc88-gif-1546544451277511492">Andresbc88 Sticker</a>from <a href="https://tenor.com/search/andresbc88-stickers">Andresbc88 Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Roda a Roda Jequiti</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --azul-escuro: #0a1f3d;      /* fundo sólido da página */
+      --azul-jequiti: #00d4ff;
+      --dourado: #ffd700;
+      --branco: #ffffff;
+      --preto: #000000;
+      --cinza-claro: #f0f4f8;
+      --vermelho-erro: #ff3b30;
+      --verde-acerto: #34c759;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      background: var(--azul-escuro);          /* cor sólida */
+      color: var(--branco);
+      font-family: 'Montserrat', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    /* ---------- GRID DE QUADRADINHOS (o “quadro”) ---------- */
+    .grid-letras {
+      width: 100%;
+      max-width: 900px;
+      display: grid;
+      grid-template-columns: repeat(15, 1fr);
+      gap: 6px;
+      margin: -35px 0;
+      padding: 15px 0;
+      
+    }
+
+    .celula {
+      aspect-ratio: 1;
+      background: rgba(0,212,255,0.25);   /* azul translúcido */
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.8rem;
+      color: transparent;
+      text-transform: uppercase;
+      transition: all .4s ease;
+    }
+
+    .celula.letra {
+      background: var(--branco);
+      color: transparent;
+      border: 3px solid var(--dourado);
+    }
+
+    .celula.revelada {
+      color: var(--preto) !important;
+      background: var(--branco);
+      animation: revelar .6s ease-out;
+    }
+
+    .celula.piscar {
+      animation: piscar 1s ease-in-out;
+    }
+
+    @keyframes revelar { 0%{transform:scale(.8);opacity:0} 100%{transform:scale(1);opacity:1} }
+    @keyframes piscar {
+      0%,100%{background:var(--branco);box-shadow:0 0 20px var(--dourado);}
+      50%{background:var(--dourado);color:var(--preto);box-shadow:0 0 40px var(--dourado);}
+    }
+
+    /* ---------- FILEIRAS EXTRAS (letras não usadas) ---------- */
+    .fileira-extra {
+      display: grid;
+      grid-template-columns: repeat(15, 1fr);
+      gap: 6px;
+      justify-items: center;
+    }
+
+    .celula-extra {
+      aspect-ratio: 1;
+      background: rgba(0,212,255,0.25);   /* azul translúcido */
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.8rem;
+      color: transparent;
+      height: 52px;
+    }
+
+    /* ---------- RESTANTE DO LAYOUT ---------- */
+    .titulo {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 3.5rem;
+      letter-spacing: 4px;
+      text-align: center;
+      margin: 20px 0;
+      background: linear-gradient(90deg,var(--azul-jequiti),var(--dourado));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 20px rgba(0,212,255,.5);
+      animation: brilhar 2s infinite alternate;
+    }
+    @keyframes brilhar { from{filter:brightness(1)} to{filter:brightness(1.3)} }
+
+    .container { width:100%; max-width:900px; display:flex; flex-direction:column; gap:25px; }
+
+    .dica-box {
+      background: rgba(255,255,255,.1);
+      backdrop-filter: blur(10px);
+      border: 2px solid var(--dourado);
+      border-radius: 16px;
+      padding: 16px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--dourado);
+      box-shadow: 0 8px 20px rgba(0,0,0,.3);
+    }
+    .dica-box label { display:block; font-size:1rem; margin-bottom:8px; color:var(--azul-jequiti); text-transform:uppercase; letter-spacing:2px; }
+
+    .letras-usadas { text-align:center; font-size:1.1rem; color:var(--cinza-claro); margin:10px 0; }
+    .letra-usada { display:inline-block; margin:0 4px; padding:4px 8px; background:rgba(255,255,255,.15); border-radius:8px; font-weight:bold; }
+
+    .input-letra { display:flex; justify-content:center; gap:12px; margin:20px 0; }
+    #letra-input {
+      width:80px; height:80px; text-align:center; font-size:2.5rem; font-weight:900;
+      text-transform:uppercase; border:4px solid var(--azul-jequiti); border-radius:16px;
+      background:var(--branco); color:var(--preto); transition:all .3s;
+    }
+    #letra-input:focus { outline:none; border-color:var(--dourado); box-shadow:0 0 20px rgba(255,215,0,.5); }
+
+    .btn-letra {
+      padding:0 30px; height:80px; font-size:1.3rem; font-weight:900;
+      background:var(--azul-jequiti); color:var(--preto); border:none; border-radius:16px;
+      cursor:pointer; transition:all .3s; text-transform:uppercase; letter-spacing:1px;
+    }
+    .btn-letra:hover:not(:disabled){ background:var(--dourado); transform:translateY(-3px); box-shadow:0 10px 20px rgba(0,0,0,.3); }
+
+    .palavras-container { display:flex; flex-direction:column; gap:16px; }
+    .palavra-item { display:flex; align-items:center; gap:12px; flex-wrap:wrap; justify-content:center; }
+    .palavra-item label { font-weight:700; color:var(--azul-jequiti); min-width:120px; text-align:right; }
+    .palavra-item input {
+      flex:1; min-width:220px; padding:14px; font-size:1.3rem; font-weight:700;
+      text-transform:uppercase; text-align:center; border:3px solid var(--azul-jequiti);
+      border-radius:12px; background:var(--branco); color:var(--preto);
+    }
+    .palavra-item input.acertado { background:var(--verde-acerto); color:var(--branco); border-color:var(--verde-acerto); }
+    .palavra-item input.errado { background:var(--vermelho-erro); color:var(--branco); animation:tremer .4s; }
+    @keyframes tremer { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-5px)} 75%{transform:translateX(5px)} }
+
+    .palavra-item button {
+      padding:14px 24px; font-weight:700; background:var(--azul-jequiti); color:var(--preto);
+      border:none; border-radius:12px; cursor:pointer; transition:all .3s;
+    }
+    .palavra-item button:hover:not(:disabled){ background:var(--dourado); }
+
+    .status { min-width:100px; text-align:center; font-weight:900; font-size:1.1rem; }
+    .acertou { color:var(--verde-acerto); } .errou { color:var(--vermelho-erro); }
+
+    #mensagem { text-align:center; font-size:1.4rem; font-weight:700; min-height:40px; padding:10px; color:var(--dourado); text-shadow:0 0 10px rgba(255,215,0,.5); }
+
+    #vitoria {
+      position:fixed; inset:0; background:rgba(0,0,0,.95); display:none;
+      flex-direction:column; justify-content:center; align-items:center; z-index:1000; backdrop-filter:blur(10px);
+    }
+    #vitoria h1 { font-family:'Bebas Neue',cursive; font-size:6rem; color:var(--dourado); text-shadow:0 0 30px var(--dourado); animation:pulso 1.5s infinite; }
+    @keyframes pulso { 0%,100%{transform:scale(1)} 50%{transform:scale(1.1)} }
+
+    canvas#confetes { position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:-1; }
+
+    /* ---------- RESPONSIVO ---------- */
+    @media (max-width:768px){
+      .titulo{font-size:2.5rem}
+      .celula,.celula-extra{font-size:1.3rem}
+      .palavra-item{flex-direction:column;text-align:center}
+      .palavra-item label{text-align:center}
+      #letra-input{width:60px;height:60px;font-size:2rem}
+      .btn-letra{height:60px;font-size:1rem}
+    }
+    @media (max-width:480px){
+      .titulo{font-size:2rem}
+      .grid-letras,.fileira-extra{gap:4px}
+      .celula,.celula-extra{font-size:1rem}
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="titulo">Roda a Roda Jequiti</h1>
+
+  <div class="container">
+    <div class="dica-box">
+      <label>Dica da Rodada</label>
+      <div id="dica">Carregando...</div>
+    </div>
+
+    <div class="letras-usadas" id="letras-usadas">Letras usadas: <span>nenhuma</span></div>
+    <div id="mensagem"></div>
+
+    <!-- Fileira extra superior -->
+    <div class="fileira-extra" id="fileira-cima"></div>
+
+    <!-- GRID DE QUADRADINHOS (o “quadro”) -->
+    <div class="grid-letras" id="grid-letras"></div>
+
+    <!-- Fileira extra inferior -->
+    <div class="fileira-extra" id="fileira-baixo"></div>
+    
+
+    <div class="input-letra">
+      <input type="text" id="letra-input" maxlength="1" placeholder="?" autocomplete="off">
+      <button id="btn-letra" class="btn-letra">Tentar Letra</button>
+    </div>
+
+    <div class="palavras-container" id="palavras-inputs"></div>
+  </div>
+
+  <div id="vitoria">
+    <h1>VOCÊ GANHOU!</h1>
+    <canvas id="confetes"></canvas>
+  </div>
+
+  <script>
+    // === DADOS DO JOGO ===
+    const palavras = ["WATSON", "BEHAVIORISMO", "RECOMPENSA",];
+    const dica = "PSICOLOGIA COMPORTAMENTAL";
+
+    // Elementos
+    const titulo = document.querySelector('.titulo');
+    const dicaEl = document.getElementById('dica');
+    const gridLetras = document.getElementById('grid-letras');
+    const fileiraCima = document.getElementById('fileira-cima');
+    const fileiraBaixo = document.getElementById('fileira-baixo');
+    const letraInput = document.getElementById('letra-input');
+    const btnLetra = document.getElementById('btn-letra');
+    const palavrasInputs = document.getElementById('palavras-inputs');
+    const mensagem = document.getElementById('mensagem');
+    const letrasUsadasEl = document.getElementById('letras-usadas').querySelector('span');
+    const vitoria = document.getElementById('vitoria');
+    const canvas = document.getElementById('confetes');
+
+    // Estado
+    let letrasUsadas = [];
+    let letrasCorretas = new Set();
+    let quadro = [];          // linhas reais (array de objetos)
+    let palavrasAcertadas = [];
+
+    // === FILEIRAS EXTRAS (15 quadrados brancos) ===
+    function criarFileiraExtra(container) {
+      for (let i = 0; i < 30; i++) {
+        const cel = document.createElement('div');
+        cel.className = 'celula-extra';
+        container.appendChild(cel);
+      }
+    }
+
+    // === MONTAR O GRID DE QUADRADINHOS (15 colunas × linhas necessárias) ===
+    function montarGrid() {
+      gridLetras.innerHTML = '';
+      fileiraCima.innerHTML = '';
+      fileiraBaixo.innerHTML = '';
+      criarFileiraExtra(fileiraCima);
+      criarFileiraExtra(fileiraBaixo);
+
+      quadro = [];
+      palavrasAcertadas = Array(palavras.length).fill(false);
+
+      const linhasTotais = palavras.length + 2; // +2 fileiras extras já criadas acima/abaixo
+      for (let i = 0; i < palavras.length; i++) {
+        const palavra = palavras[i];
+        const linhaDiv = document.createElement('div');
+        linhaDiv.style.display = 'contents'; // para que as células fiquem no grid pai
+        const startCol = Math.floor((15 - palavra.length) / 2);
+        const row = [];
+
+        for (let c = 0; c < 15; c++) {
+          const cel = document.createElement('div');
+          cel.className = 'celula';
+          if (c >= startCol && c < startCol + palavra.length) {
+            const letra = palavra[c - startCol];
+            cel.classList.add('letra');
+            cel.dataset.letra = letra;
+            row.push({ el: cel, letra, revelada: false });
+          } else {
+            row.push({ el: cel, letra: null, revelada: false });
+          }
+          gridLetras.appendChild(cel);
+        }
+        quadro.push(row);
+      }
+    }
+
+    
+
+    // === INICIALIZAÇÃO ===
+    function init() {
+      titulo.textContent = `RODA A RODA JEQUITI • ${palavras.length} PALAVRAS`;
+      dicaEl.textContent = dica;
+      montarGrid();
+      palavrasInputs.innerHTML = '';
+      letrasUsadas = [];
+      letrasCorretas.clear();
+      atualizarLetrasUsadas();
+
+      // ---- INPUTS DE PALAVRAS ----
+      palavras.forEach((palavra, i) => {
+        const item = document.createElement('div');
+        item.className = 'palavra-item';
+
+        const label = document.createElement('label');
+        label.textContent = `PALAVRA ${i + 1}:`;
+
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.placeholder = 'Digite aqui';
+        input.dataset.index = i;
+        input.autocomplete = 'off';
+        input.spellcheck = false;
+
+        const btn = document.createElement('button');
+        btn.textContent = 'Tentar';
+
+        const status = document.createElement('span');
+        status.className = 'status';
+
+        item.append(label, input, btn, status);
+        palavrasInputs.appendChild(item);
+
+        setTimeout(() => {
+          btn.onclick = () => tentarPalavra(i);
+          input.addEventListener('keydown', e => {
+            if (e.key === 'Enter') { e.preventDefault(); tentarPalavra(i); }
+          });
+          input.addEventListener('input', function () {
+            const v = this.value.toUpperCase().replace(/[^A-ZÇ]/g, '');
+            if (this.value !== v) {
+              const pos = this.selectionStart;
+              this.value = v;
+              this.setSelectionRange(pos, pos);
+            }
+          });
+          input.addEventListener('focus', () => input.select());
+        }, 100);
+      });
+    }
+
+    // === TENTAR LETRA ===
+    function tentarLetra() {
+      const letra = letraInput.value.trim().toUpperCase();
+      if (!/^[A-ZÇ]$/.test(letra)) return mostrarMsg('Letra inválida!', '#ff6b6b');
+      if (letrasUsadas.includes(letra)) return mostrarMsg('Já tentou!', '#ffa500');
+
+      letrasUsadas.push(letra);
+      atualizarLetrasUsadas();
+      letraInput.value = '';
+
+      let achou = false;
+      const piscar = [];
+
+      quadro.forEach(row => {
+        row.forEach(cell => {
+          if (cell.letra === letra && !cell.revelada) {
+            cell.revelada = true;
+            cell.el.classList.add('revelada');
+            cell.el.textContent = letra;
+            piscar.push(cell.el);
+            letrasCorretas.add(letra);
+            achou = true;
+          }
+        });
+      });
+
+      if (achou) {
+        piscar.forEach(el => el.classList.add('piscar'));
+        setTimeout(() => piscar.forEach(el => el.classList.remove('piscar')), 1000);
+        mostrarMsg(`Letra ${letra} encontrada!`, 'var(--verde-acerto)');
+      } else {
+        mostrarMsg(`Sem ${letra}...`, 'var(--vermelho-erro)');
+      }
+      setTimeout(verificarVitoria, 1200);
+    }
+
+    // === TENTAR PALAVRA ===
+    function tentarPalavra(idx) {
+      const input = palavrasInputs.querySelectorAll('input')[idx];
+      if (!input) return;
+      const btn = input.nextElementSibling;
+      const status = btn.nextElementSibling;
+      const tentativa = input.value.trim().toUpperCase();
+      const correta = palavras[idx];
+
+      if (!tentativa) return mostrarMsg('Digite a palavra!', '#ffa500');
+      if (palavrasAcertadas[idx]) return;
+
+      if (tentativa === correta) {
+        palavrasAcertadas[idx] = true;
+        input.classList.add('acertado');
+        input.disabled = btn.disabled = true;
+        status.textContent = 'ACERTOU!';
+        status.className = 'status acertou';
+        revelarPalavra(idx);
+        mostrarMsg(`Palavra ${idx + 1} correta!`, 'var(--verde-acerto)');
+      } else {
+        input.classList.add('errado');
+        status.textContent = 'ERRADO';
+        status.className = 'status errou';
+        setTimeout(() => {
+          input.classList.remove('errado');
+          status.textContent = '';
+        }, 1500);
+        mostrarMsg('Errado!', 'var(--vermelho-erro)');
+      }
+      input.value = '';
+      verificarVitoria();
+    }
+
+    function revelarPalavra(idx) {
+      const row = quadro[idx];
+      const piscar = [];
+      row.forEach(cell => {
+        if (cell.letra && !cell.revelada) {
+          cell.revelada = true;
+          cell.el.classList.add('revelada');
+          cell.el.textContent = cell.letra;
+          piscar.push(cell.el);
+          letrasCorretas.add(cell.letra);
+        }
+      });
+      piscar.forEach(el => el.classList.add('piscar'));
+      setTimeout(() => piscar.forEach(el => el.classList.remove('piscar')), 1000);
+    }
+
+    // === VERIFICAR VITÓRIA ===
+    function verificarVitoria() {
+      const todasPalavras = palavrasAcertadas.every(v => v);
+      const todasLetras = palavras.every(p => [...p].every(l => letrasCorretas.has(l)));
+      if (todasPalavras || todasLetras) setTimeout(mostrarVitoria, 800);
+    }
+
+    function mostrarVitoria() {
+      vitoria.style.display = 'flex';
+      iniciarConfetes();
+    }
+
+    function mostrarMsg(texto, cor) {
+      mensagem.textContent = texto;
+      mensagem.style.color = cor;
+      setTimeout(() => mensagem.textContent = '', 3000);
+    }
+
+    function atualizarLetrasUsadas() {
+      letrasUsadasEl.innerHTML = letrasUsadas.length
+        ? letrasUsadas.map(l => `<span class="letra-usada">${l}</span>`).join(' ')
+        : 'nenhuma';
+    }
+
+    // === CONFETES ===
+    function iniciarConfetes() {
+      const ctx = canvas.getContext('2d');
+      canvas.width = innerWidth;
+      canvas.height = innerHeight;
+      const confetes = [];
+      const cores = ['#ffd700','#00d4ff','#ff3b30','#34c759','#ff9500'];
+
+      class Particula{
+        constructor(){
+          this.x=Math.random()*canvas.width;
+          this.y=-10;
+          this.vx=Math.random()*6-3;
+          this.vy=Math.random()*5+3;
+          this.size=Math.random()*7+5;
+          this.color=cores[Math.floor(Math.random()*cores.length)];
+          this.angle=Math.random()*360;
+          this.spin=Math.random()*15-7.5;
+        }
+        update(){
+          this.x+=this.vx; this.y+=this.vy; this.vy+=0.15; this.angle+=this.spin;
+          if(this.y>canvas.height+20){ this.y=-20; this.x=Math.random()*canvas.width; }
+        }
+        draw(){
+          ctx.save();
+          ctx.translate(this.x,this.y);
+          ctx.rotate(this.angle*Math.PI/180);
+          ctx.fillStyle=this.color;
+          ctx.fillRect(-this.size/2,-this.size/2,this.size,this.size);
+          ctx.restore();
+        }
+      }
+      for(let i=0;i<250;i++) confetes.push(new Particula());
+      function animar(){
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        confetes.forEach(c=>{c.update();c.draw();});
+        requestAnimationFrame(animar);
+      }
+      animar();
+    }
+
+    // === EVENTOS ===
+    btnLetra.onclick = tentarLetra;
+    letraInput.addEventListener('keypress', e => { if(e.key==='Enter') tentarLetra(); });
+    letraInput.addEventListener('input', () => {
+      letraInput.value = letraInput.value.toUpperCase().slice(0,1).replace(/[^A-ZÇ]/g,'');
+    });
+
+    window.addEventListener('load', () => setTimeout(init, 100));
+  </script>
+</body>
+</html>
